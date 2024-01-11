@@ -14783,7 +14783,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <span class="c1"># print(&quot;Head&quot;, &quot;\n&quot;, df.head())</span>
     <span class="c1"># print(&quot;Tail&quot;, &quot;\n&quot;, df.tail())</span>
     <span class="c1"># print(&quot;\n\n&quot;, &quot;Columns&quot;, &quot;\n&quot;, df.columns)</span>
-    <span class="c1"># print(&quot;\n\n&quot;, &quot;Describe&quot;, &quot;\n&quot;, df.describe)</span>
+    <span class="c1"># print(&quot;\n\n\n&quot;, &quot;Describe&quot;, &quot;\n&quot;, df.describe())</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;Correlation Matrix&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">())</span>
     <span class="c1"># print(&quot;\n\n\n&quot;, &quot;Info&quot;, &quot;\n&quot;, df.info())</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;Distinct Count&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
@@ -14812,6 +14812,17 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="SQLite">SQLite<a class="anchor-link" href="#SQLite">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Track-Metadata">Track Metadata<a class="anchor-link" href="#Track-Metadata">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -14896,7 +14907,7 @@ songs
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14905,8 +14916,7 @@ songs
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Select all data from the table</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM songs&#39;</span><span class="p">,</span> <span class="n">tm_con</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">songs_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM songs&#39;</span><span class="p">,</span> <span class="n">tm_con</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14914,119 +14924,7 @@ songs
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>track_id</th>
-      <th>title</th>
-      <th>song_id</th>
-      <th>release</th>
-      <th>artist_id</th>
-      <th>artist_mbid</th>
-      <th>artist_name</th>
-      <th>duration</th>
-      <th>artist_familiarity</th>
-      <th>artist_hotttnesss</th>
-      <th>year</th>
-      <th>track_7digitalid</th>
-      <th>shs_perf</th>
-      <th>shs_work</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>TRMMMYQ128F932D901</td>
-      <td>Silent Night</td>
-      <td>SOQMMHC12AB0180CB8</td>
-      <td>Monster Ballads X-Mas</td>
-      <td>ARYZTJS1187B98C555</td>
-      <td>357ff05d-848a-44cf-b608-cb34b5701ae5</td>
-      <td>Faster Pussy cat</td>
-      <td>252.05506</td>
-      <td>0.649822</td>
-      <td>0.394032</td>
-      <td>2003</td>
-      <td>7032331</td>
-      <td>-1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>TRMMMKD128F425225D</td>
-      <td>Tanssi vaan</td>
-      <td>SOVFVAK12A8C1350D9</td>
-      <td>Karkuteillä</td>
-      <td>ARMVN3U1187FB3A1EB</td>
-      <td>8d7ef530-a6fd-4f8f-b2e2-74aec765e0f9</td>
-      <td>Karkkiautomaatti</td>
-      <td>156.55138</td>
-      <td>0.439604</td>
-      <td>0.356992</td>
-      <td>1995</td>
-      <td>1514808</td>
-      <td>-1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>TRMMMRX128F93187D9</td>
-      <td>No One Could Ever</td>
-      <td>SOGTUKN12AB017F4F1</td>
-      <td>Butter</td>
-      <td>ARGEKB01187FB50750</td>
-      <td>3d403d44-36ce-465c-ad43-ae877e65adc4</td>
-      <td>Hudson Mohawke</td>
-      <td>138.97098</td>
-      <td>0.643681</td>
-      <td>0.437504</td>
-      <td>2006</td>
-      <td>6945353</td>
-      <td>-1</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15034,35 +14932,7 @@ songs
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Close Connection</span>
-<span class="n">tm_con</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Data-Modeling">Data Modeling<a class="anchor-link" href="#Data-Modeling">&#182;</a></h1>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">breakdown</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">breakdown</span><span class="p">(</span><span class="n">songs_df</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15218,54 +15088,40 @@ dtype: float64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Close Connection</span>
+<span class="n">tm_con</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Artist-Similiraity">Artist Similiraity<a class="anchor-link" href="#Artist-Similiraity">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Sorting by a specific column</span>
-<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-</pre></div>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">as_con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;artist_similarity.db&quot;</span><span class="p">)</span>
 
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;song_id&#39;</span><span class="p">,</span> <span class="s1">&#39;release&#39;</span><span class="p">,</span>	<span class="s1">&#39;artist_id&#39;</span><span class="p">,</span><span class="s1">&#39;artist_name&#39;</span><span class="p">,</span> <span class="s1">&#39;duration&#39;</span><span class="p">,</span> <span class="s1">&#39;artist_familiarity&#39;</span><span class="p">,</span><span class="s1">&#39;artist_hotttnesss&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">]]</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Convert duration from seconds to minutes</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;duration_minutes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">60</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s1">&#39;artist_hotttnesss&#39;</span><span class="p">:</span><span class="s1">&#39;score&#39;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="c1"># Create a new column by combining &#39;artist_familiarity&#39; and &#39;artist_score&#39;</span>
-<span class="c1"># df[&#39;combined_fam_score&#39;] = df[&#39;artist_familiarity&#39;] + df[&#39;score&#39;]</span>
-
-<span class="c1"># Create a new column by showing the difference between &#39;artist_familiarity&#39; and &#39;artist_score&#39;</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;difference_fam_score&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;artist_familiarity&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span>
-
-<span class="c1"># Create a new column by combining &#39;artist_name&#39; and &#39;release&#39;</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;artist_release&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;artist_name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; - &#39;</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;release&#39;</span><span class="p">]</span>
+<span class="n">as_cur</span> <span class="o">=</span> <span class="n">as_con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -15278,16 +15134,20 @@ dtype: float64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Filter songs out that have year 0 &amp; 2011</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">2011</span><span class="p">)]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Query to fetch table names from the master table</span>
+<span class="n">as_cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT name FROM sqlite_master WHERE type=&#39;table&#39;;&quot;</span><span class="p">)</span>
 
-<span class="c1"># Remove rows with negative values in &#39;artist_familiarity&#39; or &#39;score&#39;</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;artist_familiarity&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)]</span>
+<span class="c1"># Fetch all the table names</span>
+<span class="n">tables</span> <span class="o">=</span> <span class="n">as_cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
 
-<span class="n">df</span>
+<span class="c1"># Print the table names</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tables in the database:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">table</span> <span class="ow">in</span> <span class="n">tables</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    
 </pre></div>
 
      </div>
@@ -15305,7 +15165,2078 @@ dtype: float64
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Tables in the database:
+artists
+similarity
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Select all data from the table</span>
+<span class="n">artists_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM artists&#39;</span><span class="p">,</span> <span class="n">as_con</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">breakdown</span><span class="p">(</span><span class="n">artists_df</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>
+
+
+ Correlation Matrix 
+ Empty DataFrame
+Columns: []
+Index: []
+
+
+
+ Distinct Count 
+ artist_id    44745
+dtype: int64
+
+
+
+ Count 
+ artist_id    44745
+dtype: int64
+
+
+
+ DTypes 
+ artist_id    object
+dtype: object
+
+
+
+ Shape 
+ (44745, 1)
+
+
+
+ Nulls 
+ artist_id    0
+dtype: int64
+
+
+
+ Null % 
+ artist_id    0.0
+dtype: float64
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Select all data from the table</span>
+<span class="n">similarity_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM similarity&#39;</span><span class="p">,</span> <span class="n">as_con</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">breakdown</span><span class="p">(</span><span class="n">similarity_df</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>
+
+
+ Correlation Matrix 
+ Empty DataFrame
+Columns: []
+Index: []
+
+
+
+ Distinct Count 
+ target     44460
+similar    43578
+dtype: int64
+
+
+
+ Count 
+ target     2201916
+similar    2201916
+dtype: int64
+
+
+
+ DTypes 
+ target     object
+similar    object
+dtype: object
+
+
+
+ Shape 
+ (2201916, 2)
+
+
+
+ Nulls 
+ target     0
+similar    0
+dtype: int64
+
+
+
+ Null % 
+ target     0.0
+similar    0.0
+dtype: float64
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">artists_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;artists.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">similarity_df</span> <span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;similarity.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">as_con</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Artists-Term">Artists Term<a class="anchor-link" href="#Artists-Term">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">at_con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;artist_term.db&quot;</span><span class="p">)</span>
+
+<span class="n">at_cur</span> <span class="o">=</span> <span class="n">at_con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Query to fetch table names from the master table</span>
+<span class="n">at_cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT name FROM sqlite_master WHERE type=&#39;table&#39;;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Fetch all the table names</span>
+<span class="n">tables</span> <span class="o">=</span> <span class="n">at_cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+
+<span class="c1"># Print the table names</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tables in the database:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">table</span> <span class="ow">in</span> <span class="n">tables</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Tables in the database:
+artists
+terms
+artist_term
+mbtags
+artist_mbtag
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_artists1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM artists&#39;</span><span class="p">,</span> <span class="n">at_con</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">breakdown</span><span class="p">(</span><span class="n">df_artists1</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>
+
+
+ Correlation Matrix 
+ Empty DataFrame
+Columns: []
+Index: []
+
+
+
+ Distinct Count 
+ artist_id    44745
+dtype: int64
+
+
+
+ Count 
+ artist_id    44745
+dtype: int64
+
+
+
+ DTypes 
+ artist_id    object
+dtype: object
+
+
+
+ Shape 
+ (44745, 1)
+
+
+
+ Nulls 
+ artist_id    0
+dtype: int64
+
+
+
+ Null % 
+ artist_id    0.0
+dtype: float64
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_terms</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM terms&#39;</span><span class="p">,</span> <span class="n">at_con</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">breakdown</span><span class="p">(</span><span class="n">df_terms</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>
+
+
+ Correlation Matrix 
+ Empty DataFrame
+Columns: []
+Index: []
+
+
+
+ Distinct Count 
+ term    7643
+dtype: int64
+
+
+
+ Count 
+ term    7643
+dtype: int64
+
+
+
+ DTypes 
+ term    object
+dtype: object
+
+
+
+ Shape 
+ (7643, 1)
+
+
+
+ Nulls 
+ term    0
+dtype: int64
+
+
+
+ Null % 
+ term    0.0
+dtype: float64
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_artist_term</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM artist_term&#39;</span><span class="p">,</span> <span class="n">at_con</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">breakdown</span><span class="p">(</span><span class="n">df_artist_term</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>
+
+
+ Correlation Matrix 
+ Empty DataFrame
+Columns: []
+Index: []
+
+
+
+ Distinct Count 
+ artist_id    43943
+term          7643
+dtype: int64
+
+
+
+ Count 
+ artist_id    1109381
+term         1109381
+dtype: int64
+
+
+
+ DTypes 
+ artist_id    object
+term         object
+dtype: object
+
+
+
+ Shape 
+ (1109381, 2)
+
+
+
+ Nulls 
+ artist_id    0
+term         0
+dtype: int64
+
+
+
+ Null % 
+ artist_id    0.0
+term         0.0
+dtype: float64
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_mbtags</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM mbtags&#39;</span><span class="p">,</span> <span class="n">at_con</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">breakdown</span><span class="p">(</span><span class="n">df_mbtags</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>
+
+
+ Correlation Matrix 
+ Empty DataFrame
+Columns: []
+Index: []
+
+
+
+ Distinct Count 
+ mbtag    2321
+dtype: int64
+
+
+
+ Count 
+ mbtag    2321
+dtype: int64
+
+
+
+ DTypes 
+ mbtag    object
+dtype: object
+
+
+
+ Shape 
+ (2321, 1)
+
+
+
+ Nulls 
+ mbtag    0
+dtype: int64
+
+
+
+ Null % 
+ mbtag    0.0
+dtype: float64
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_artist_mbtag</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM artist_mbtag&#39;</span><span class="p">,</span> <span class="n">at_con</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">breakdown</span><span class="p">(</span><span class="n">df_artist_mbtag</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>
+
+
+ Correlation Matrix 
+ Empty DataFrame
+Columns: []
+Index: []
+
+
+
+ Distinct Count 
+ artist_id    8838
+mbtag        2321
+dtype: int64
+
+
+
+ Count 
+ artist_id    24777
+mbtag        24777
+dtype: int64
+
+
+
+ DTypes 
+ artist_id    object
+mbtag        object
+dtype: object
+
+
+
+ Shape 
+ (24777, 2)
+
+
+
+ Nulls 
+ artist_id    0
+mbtag        0
+dtype: int64
+
+
+
+ Null % 
+ artist_id    0.0
+mbtag        0.0
+dtype: float64
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Tables in the database:</span>
+<span class="sd">artists</span>
+<span class="sd">terms</span>
+<span class="sd">artist_term</span>
+<span class="sd">mbtags</span>
+<span class="sd">artist_mbtag</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">df_artists1</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;artists1.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">df_terms</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;terms.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">df_artist_term</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;artist_term.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">df_mbtags</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;mbtags.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">df_artist_mbtag</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;artist_mbtag.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">at_con</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="DataFrames">DataFrames<a class="anchor-link" href="#DataFrames">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">who</span> DataFrame
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>artists_df	 df_artist_mbtag	 df_artist_term	 df_artists1	 df_mbtags	 df_terms	 similarity_df	 songs_df	 
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#NA</span>
+<span class="n">artists_df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[34]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>artist_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AR002UA1187B9A637D</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AR003FB1187B994355</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AR006821187FB5192B</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_artist_mbtag</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>artist_id</th>
+      <th>mbtag</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AR002UA1187B9A637D</td>
+      <td>uk</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AR002UA1187B9A637D</td>
+      <td>rock</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AR002UA1187B9A637D</td>
+      <td>garage rock</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AR006821187FB5192B</td>
+      <td>bass</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AR00A6H1187FB5402A</td>
+      <td>detroit</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>24772</th>
+      <td>ARZZMWO1187B9AFB36</td>
+      <td>usa</td>
+    </tr>
+    <tr>
+      <th>24773</th>
+      <td>ARZZMWO1187B9AFB36</td>
+      <td>metal</td>
+    </tr>
+    <tr>
+      <th>24774</th>
+      <td>ARZZXT51187FB4627E</td>
+      <td>classic pop and rock</td>
+    </tr>
+    <tr>
+      <th>24775</th>
+      <td>ARZZYRB1187B99D0B6</td>
+      <td>jazz</td>
+    </tr>
+    <tr>
+      <th>24776</th>
+      <td>ARZZYRB1187B99D0B6</td>
+      <td>canadian</td>
+    </tr>
+  </tbody>
+</table>
+<p>24777 rows × 2 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_artist_term</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[34]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>artist_id</th>
+      <th>term</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AR002UA1187B9A637D</td>
+      <td>garage rock</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AR002UA1187B9A637D</td>
+      <td>country rock</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AR002UA1187B9A637D</td>
+      <td>free jazz</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AR002UA1187B9A637D</td>
+      <td>oi</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AR002UA1187B9A637D</td>
+      <td>space rock</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1109376</th>
+      <td>ARZZZKG1271F573BC4</td>
+      <td>heavy</td>
+    </tr>
+    <tr>
+      <th>1109377</th>
+      <td>ARZZZKG1271F573BC4</td>
+      <td>dark</td>
+    </tr>
+    <tr>
+      <th>1109378</th>
+      <td>ARZZZKG1271F573BC4</td>
+      <td>instrumental</td>
+    </tr>
+    <tr>
+      <th>1109379</th>
+      <td>ARZZZKG1271F573BC4</td>
+      <td>beautiful</td>
+    </tr>
+    <tr>
+      <th>1109380</th>
+      <td>ARZZZKG1271F573BC4</td>
+      <td>guitar</td>
+    </tr>
+  </tbody>
+</table>
+<p>1109381 rows × 2 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_artists1</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[35]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>artist_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AR002UA1187B9A637D</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AR003FB1187B994355</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AR006821187FB5192B</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AR009211187B989185</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AR009SZ1187B9A73F4</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>44740</th>
+      <td>ARZZXT51187FB4627E</td>
+    </tr>
+    <tr>
+      <th>44741</th>
+      <td>ARZZYRB1187B99D0B6</td>
+    </tr>
+    <tr>
+      <th>44742</th>
+      <td>ARZZYRH11C8A416A12</td>
+    </tr>
+    <tr>
+      <th>44743</th>
+      <td>ARZZZAI124207819C9</td>
+    </tr>
+    <tr>
+      <th>44744</th>
+      <td>ARZZZKG1271F573BC4</td>
+    </tr>
+  </tbody>
+</table>
+<p>44745 rows × 1 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#NA</span>
+<span class="n">df_mbtags</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[36]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mbtag</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>00s</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>00s 10s</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1 13 165900 150 7672 22647 34612 48720 59280 7...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1 7 186240 183 23558 41608 89158 111733 150833...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>10s</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2316</th>
+      <td>ਭੰਗੜਾ</td>
+    </tr>
+    <tr>
+      <th>2317</th>
+      <td>ハロー プロジェクト</td>
+    </tr>
+    <tr>
+      <th>2318</th>
+      <td>姚姓</td>
+    </tr>
+    <tr>
+      <th>2319</th>
+      <td>日本</td>
+    </tr>
+    <tr>
+      <th>2320</th>
+      <td>香港歌手</td>
+    </tr>
+  </tbody>
+</table>
+<p>2321 rows × 1 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_terms</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[37]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>term</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>00s</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>00s alternative</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>00s country</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>00s indie</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>00s pop</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>7638</th>
+      <td>zxzw 2006</td>
+    </tr>
+    <tr>
+      <th>7639</th>
+      <td>zxzw 2007</td>
+    </tr>
+    <tr>
+      <th>7640</th>
+      <td>zxzw 2008</td>
+    </tr>
+    <tr>
+      <th>7641</th>
+      <td>zxzw 2009</td>
+    </tr>
+    <tr>
+      <th>7642</th>
+      <td>zydeco</td>
+    </tr>
+  </tbody>
+</table>
+<p>7643 rows × 1 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">similarity_df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[38]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>target</th>
+      <th>similar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AR002UA1187B9A637D</td>
+      <td>ARQDOR81187FB3B06C</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AR002UA1187B9A637D</td>
+      <td>AROHMXJ1187B989023</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AR002UA1187B9A637D</td>
+      <td>ARAGWVR1187B9B749B</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AR002UA1187B9A637D</td>
+      <td>AREQVWS1241B9CC0A4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AR002UA1187B9A637D</td>
+      <td>ARHBE351187FB3B0CD</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2201911</th>
+      <td>ARZZZKG1271F573BC4</td>
+      <td>ARBYTEZ1187FB42EC2</td>
+    </tr>
+    <tr>
+      <th>2201912</th>
+      <td>ARZZZKG1271F573BC4</td>
+      <td>AR3B4IC1187B98C8B6</td>
+    </tr>
+    <tr>
+      <th>2201913</th>
+      <td>ARZZZKG1271F573BC4</td>
+      <td>ARM9KFI1187B9B356C</td>
+    </tr>
+    <tr>
+      <th>2201914</th>
+      <td>ARZZZKG1271F573BC4</td>
+      <td>ARF5QVT1187B9946B9</td>
+    </tr>
+    <tr>
+      <th>2201915</th>
+      <td>ARZZZKG1271F573BC4</td>
+      <td>ARHTAPO1187FB5AADE</td>
+    </tr>
+  </tbody>
+</table>
+<p>2201916 rows × 2 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">songs_df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>track_id</th>
+      <th>title</th>
+      <th>song_id</th>
+      <th>release</th>
+      <th>artist_id</th>
+      <th>artist_mbid</th>
+      <th>artist_name</th>
+      <th>duration</th>
+      <th>artist_familiarity</th>
+      <th>artist_hotttnesss</th>
+      <th>year</th>
+      <th>track_7digitalid</th>
+      <th>shs_perf</th>
+      <th>shs_work</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>TRMMMYQ128F932D901</td>
+      <td>Silent Night</td>
+      <td>SOQMMHC12AB0180CB8</td>
+      <td>Monster Ballads X-Mas</td>
+      <td>ARYZTJS1187B98C555</td>
+      <td>357ff05d-848a-44cf-b608-cb34b5701ae5</td>
+      <td>Faster Pussy cat</td>
+      <td>252.05506</td>
+      <td>0.649822</td>
+      <td>0.394032</td>
+      <td>2003</td>
+      <td>7032331</td>
+      <td>-1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>TRMMMKD128F425225D</td>
+      <td>Tanssi vaan</td>
+      <td>SOVFVAK12A8C1350D9</td>
+      <td>Karkuteillä</td>
+      <td>ARMVN3U1187FB3A1EB</td>
+      <td>8d7ef530-a6fd-4f8f-b2e2-74aec765e0f9</td>
+      <td>Karkkiautomaatti</td>
+      <td>156.55138</td>
+      <td>0.439604</td>
+      <td>0.356992</td>
+      <td>1995</td>
+      <td>1514808</td>
+      <td>-1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>TRMMMRX128F93187D9</td>
+      <td>No One Could Ever</td>
+      <td>SOGTUKN12AB017F4F1</td>
+      <td>Butter</td>
+      <td>ARGEKB01187FB50750</td>
+      <td>3d403d44-36ce-465c-ad43-ae877e65adc4</td>
+      <td>Hudson Mohawke</td>
+      <td>138.97098</td>
+      <td>0.643681</td>
+      <td>0.437504</td>
+      <td>2006</td>
+      <td>6945353</td>
+      <td>-1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>TRMMMCH128F425532C</td>
+      <td>Si Vos Querés</td>
+      <td>SOBNYVR12A8C13558C</td>
+      <td>De Culo</td>
+      <td>ARNWYLR1187B9B2F9C</td>
+      <td>12be7648-7094-495f-90e6-df4189d68615</td>
+      <td>Yerba Brava</td>
+      <td>145.05751</td>
+      <td>0.448501</td>
+      <td>0.372349</td>
+      <td>2003</td>
+      <td>2168257</td>
+      <td>-1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>TRMMMWA128F426B589</td>
+      <td>Tangle Of Aspens</td>
+      <td>SOHSBXH12A8C13B0DF</td>
+      <td>Rene Ablaze Presents Winter Sessions</td>
+      <td>AREQDTE1269FB37231</td>
+      <td></td>
+      <td>Der Mystic</td>
+      <td>514.29832</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0</td>
+      <td>2264873</td>
+      <td>-1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>999995</th>
+      <td>TRYYYUS12903CD2DF0</td>
+      <td>O Samba Da Vida</td>
+      <td>SOTXAME12AB018F136</td>
+      <td>Pacha V.I.P.</td>
+      <td>AR7Z4J81187FB3FC59</td>
+      <td>9d50cb20-7e42-45cc-b0dd-154c3e92a577</td>
+      <td>Kiko Navarro</td>
+      <td>217.44281</td>
+      <td>0.528617</td>
+      <td>0.411595</td>
+      <td>0</td>
+      <td>7522478</td>
+      <td>-1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>999996</th>
+      <td>TRYYYJO128F426DA37</td>
+      <td>Jago Chhadeo</td>
+      <td>SOXQYIQ12A8C137FBB</td>
+      <td>Naale Baba Lassi Pee Gya</td>
+      <td>ART5FZD1187B9A7FCF</td>
+      <td>2357c400-9109-42b6-b3fe-9e2d9f8e3872</td>
+      <td>Kuldeep Manak</td>
+      <td>244.16608</td>
+      <td>0.401500</td>
+      <td>0.374866</td>
+      <td>0</td>
+      <td>1632096</td>
+      <td>-1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>999997</th>
+      <td>TRYYYMG128F4260ECA</td>
+      <td>Novemba</td>
+      <td>SOHODZI12A8C137BB3</td>
+      <td>Dub_Connected: electronic music</td>
+      <td>ARZ3R6M1187B9AF750</td>
+      <td>8b97e9c8-61f5-4615-9a96-276f24204e34</td>
+      <td>Gabriel Le Mar</td>
+      <td>553.03791</td>
+      <td>0.556918</td>
+      <td>0.336914</td>
+      <td>0</td>
+      <td>2219291</td>
+      <td>-1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>999998</th>
+      <td>TRYYYDJ128F9310A21</td>
+      <td>Faraday</td>
+      <td>SOLXGOR12A81C21EB7</td>
+      <td>The Trance Collection Vol. 2</td>
+      <td>ARCMCOK1187B9B1073</td>
+      <td>4ac5f3de-c5ad-475e-ad50-41f1ef9dba20</td>
+      <td>Elude</td>
+      <td>484.51873</td>
+      <td>0.403668</td>
+      <td>0.256935</td>
+      <td>0</td>
+      <td>5472456</td>
+      <td>-1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>999999</th>
+      <td>TRYYYVU12903CD01E3</td>
+      <td>Fernweh feat. Sektion Kuchikäschtli</td>
+      <td>SOWXJXQ12AB0189F43</td>
+      <td>So Oder So</td>
+      <td>AR7PLM21187B990D08</td>
+      <td>3af2b07e-c91c-4160-9bda-f0b9e3144ed3</td>
+      <td>Texta</td>
+      <td>295.07873</td>
+      <td>0.552977</td>
+      <td>0.454869</td>
+      <td>2004</td>
+      <td>8486723</td>
+      <td>-1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>1000000 rows × 14 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Data-Modeling">Data Modeling<a class="anchor-link" href="#Data-Modeling">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Sorting by a specific column</span>
+<span class="n">songs_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get all distinct values in the &#39;year&#39; column</span>
+<span class="n">distinct_years</span> <span class="o">=</span> <span class="n">songs_df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="c1"># Display the result</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">distinct_years</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">songs_df</span> <span class="o">=</span> <span class="n">songs_df</span><span class="p">[[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;song_id&#39;</span><span class="p">,</span> <span class="s1">&#39;release&#39;</span><span class="p">,</span>	<span class="s1">&#39;artist_id&#39;</span><span class="p">,</span><span class="s1">&#39;artist_name&#39;</span><span class="p">,</span> <span class="s1">&#39;duration&#39;</span><span class="p">,</span> <span class="s1">&#39;artist_familiarity&#39;</span><span class="p">,</span><span class="s1">&#39;artist_hotttnesss&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">]]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Convert duration from seconds to minutes</span>
+<span class="n">songs_df</span><span class="p">[</span><span class="s1">&#39;duration_minutes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">songs_df</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">60</span>
+<span class="n">songs_df</span> <span class="o">=</span> <span class="n">songs_df</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s1">&#39;artist_hotttnesss&#39;</span><span class="p">:</span><span class="s1">&#39;score&#39;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Create a new column by combining &#39;artist_familiarity&#39; and &#39;artist_score&#39;</span>
+<span class="c1"># songs_df[&#39;combined_fam_score&#39;] = songs_df[&#39;artist_familiarity&#39;] + songs_df[&#39;score&#39;]</span>
+
+<span class="c1"># Create a new column by showing the difference between &#39;artist_familiarity&#39; and &#39;artist_score&#39;</span>
+<span class="n">songs_df</span><span class="p">[</span><span class="s1">&#39;difference_fam_score&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">songs_df</span><span class="p">[</span><span class="s1">&#39;artist_familiarity&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">songs_df</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span>
+
+<span class="c1"># Create a new column by combining &#39;artist_name&#39; and &#39;release&#39;</span>
+<span class="n">songs_df</span><span class="p">[</span><span class="s1">&#39;artist_release&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">songs_df</span><span class="p">[</span><span class="s1">&#39;artist_name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; - &#39;</span> <span class="o">+</span> <span class="n">songs_df</span><span class="p">[</span><span class="s1">&#39;release&#39;</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Filter songs out that have year 0 &amp; 2011</span>
+<span class="n">songs_df</span> <span class="o">=</span> <span class="n">songs_df</span><span class="p">[(</span><span class="n">songs_df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">songs_df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">2011</span><span class="p">)]</span>
+
+<span class="c1"># Remove rows with negative values in &#39;artist_familiarity&#39; or &#39;score&#39;</span>
+<span class="n">songs_df</span> <span class="o">=</span> <span class="n">songs_df</span><span class="p">[(</span><span class="n">songs_df</span><span class="p">[</span><span class="s1">&#39;artist_familiarity&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">songs_df</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)]</span>
+
+<span class="n">songs_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[38]:</div>
 
 
 
@@ -15418,99 +17349,8 @@ dtype: float64
       <td>0.176345</td>
       <td>Overkill - Ironbound</td>
     </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>752228</th>
-      <td>Mandela You're Free</td>
-      <td>SOEHRCG12A81C21A2A</td>
-      <td>Turning Point</td>
-      <td>AR1SUNB1187FB41BC8</td>
-      <td>Barrington Levy</td>
-      <td>224.91383</td>
-      <td>0.669587</td>
-      <td>0.414859</td>
-      <td>1922</td>
-      <td>3.748564</td>
-      <td>0.254728</td>
-      <td>Barrington Levy - Turning Point</td>
-    </tr>
-    <tr>
-      <th>38428</th>
-      <td>Warm And Sunny Day</td>
-      <td>SOAQIEA12A81C21A18</td>
-      <td>Turning Point</td>
-      <td>AR1SUNB1187FB41BC8</td>
-      <td>Barrington Levy</td>
-      <td>243.82649</td>
-      <td>0.669587</td>
-      <td>0.414859</td>
-      <td>1922</td>
-      <td>4.063775</td>
-      <td>0.254728</td>
-      <td>Barrington Levy - Turning Point</td>
-    </tr>
-    <tr>
-      <th>734419</th>
-      <td>Don't Pan Me</td>
-      <td>SODAWZF12A6D4FCB4B</td>
-      <td>Alberta Hunter Vol. 1 (1921-1923)</td>
-      <td>ARMCOBI1187B9A0BC8</td>
-      <td>Alberta Hunter</td>
-      <td>180.40118</td>
-      <td>0.489134</td>
-      <td>0.349621</td>
-      <td>1922</td>
-      <td>3.006686</td>
-      <td>0.139513</td>
-      <td>Alberta Hunter - Alberta Hunter Vol. 1 (1921-1...</td>
-    </tr>
-    <tr>
-      <th>286039</th>
-      <td>Warm And Sunny Day</td>
-      <td>SODIEDT12AB018A10D</td>
-      <td>Black &amp; White Vol. 2: Reggae Classics</td>
-      <td>AR1SUNB1187FB41BC8</td>
-      <td>Barrington Levy</td>
-      <td>217.33832</td>
-      <td>0.669587</td>
-      <td>0.414859</td>
-      <td>1922</td>
-      <td>3.622305</td>
-      <td>0.254728</td>
-      <td>Barrington Levy - Black &amp; White Vol. 2: Reggae...</td>
-    </tr>
-    <tr>
-      <th>877501</th>
-      <td>Something In My Heart (Full Vocal)</td>
-      <td>SOEHUSE12A81C21A34</td>
-      <td>Turning Point</td>
-      <td>AR1SUNB1187FB41BC8</td>
-      <td>Barrington Levy</td>
-      <td>238.60200</td>
-      <td>0.669587</td>
-      <td>0.414859</td>
-      <td>1922</td>
-      <td>3.976700</td>
-      <td>0.254728</td>
-      <td>Barrington Levy - Turning Point</td>
-    </tr>
   </tbody>
 </table>
-<p>504472 rows × 12 columns</p>
 </div>
 </div>
 
@@ -15520,30 +17360,15 @@ dtype: float64
 
 </div>
 
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Data-Exploration">Data Exploration<a class="anchor-link" href="#Data-Exploration">&#182;</a></h2>
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get all distinct values in the &#39;year&#39; column</span>
-<span class="n">distinct_years</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-
-<span class="c1"># Display the result</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">distinct_years</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">breakdown</span><span class="p">(</span><span class="n">songs_df</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15565,13 +17390,115 @@ dtype: float64
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[2010 2009 2008 2007 2006 2005 2004 2003 2002 2001 2000 1999 1998 1997
- 1996 1995 1994 1993 1992 1991 1990 1989 1988 1987 1986 1985 1984 1983
- 1982 1981 1980 1979 1978 1977 1976 1975 1974 1973 1972 1971 1970 1969
- 1968 1967 1966 1965 1964 1963 1962 1961 1960 1959 1958 1957 1956 1955
- 1954 1953 1952 1951 1950 1949 1948 1947 1946 1945 1944 1943 1942 1941
- 1940 1939 1938 1937 1936 1935 1934 1933 1932 1931 1930 1929 1928 1927
- 1926 1925 1924 1922]
+<pre>
+
+
+ Correlation Matrix 
+                       duration  artist_familiarity     score      year  \
+duration              1.000000           -0.007573 -0.003411  0.052877   
+artist_familiarity   -0.007573            1.000000  0.771963  0.025743   
+score                -0.003411            0.771963  1.000000  0.012278   
+year                  0.052877            0.025743  0.012278  1.000000   
+duration_minutes      1.000000           -0.007573 -0.003411  0.052877   
+difference_fam_score -0.007839            0.651265  0.020376  0.025832   
+
+                      duration_minutes  difference_fam_score  
+duration                      1.000000             -0.007839  
+artist_familiarity           -0.007573              0.651265  
+score                        -0.003411              0.020376  
+year                          0.052877              0.025832  
+duration_minutes              1.000000             -0.007839  
+difference_fam_score         -0.007839              1.000000  
+
+
+
+ Distinct Count 
+ title                   354614
+song_id                 503701
+release                  83337
+artist_id                26651
+artist_name              36090
+duration                 26744
+artist_familiarity       30026
+score                    29506
+year                        88
+duration_minutes         26744
+difference_fam_score     34670
+artist_release          117640
+dtype: int64
+
+
+
+ Count 
+ title                   504472
+song_id                 504472
+release                 504472
+artist_id               504472
+artist_name             504472
+duration                504472
+artist_familiarity      504472
+score                   504472
+year                    504472
+duration_minutes        504472
+difference_fam_score    504472
+artist_release          504472
+dtype: int64
+
+
+
+ DTypes 
+ title                    object
+song_id                  object
+release                  object
+artist_id                object
+artist_name              object
+duration                float64
+artist_familiarity      float64
+score                   float64
+year                      int64
+duration_minutes        float64
+difference_fam_score    float64
+artist_release           object
+dtype: object
+
+
+
+ Shape 
+ (504472, 12)
+
+
+
+ Nulls 
+ title                   0
+song_id                 0
+release                 0
+artist_id               0
+artist_name             0
+duration                0
+artist_familiarity      0
+score                   0
+year                    0
+duration_minutes        0
+difference_fam_score    0
+artist_release          0
+dtype: int64
+
+
+
+ Null % 
+ title                   0.0
+song_id                 0.0
+release                 0.0
+artist_id               0.0
+artist_name             0.0
+duration                0.0
+artist_familiarity      0.0
+score                   0.0
+year                    0.0
+duration_minutes        0.0
+difference_fam_score    0.0
+artist_release          0.0
+dtype: float64
 </pre>
 </div>
 </div>
@@ -15585,7 +17512,675 @@ dtype: float64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_artist_mbtag</span> <span class="o">=</span> <span class="n">df_artist_mbtag</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s1">&#39;artist_id&#39;</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">)</span>
+
+<span class="n">df_artist_mbtag</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[41]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>artist_id</th>
+      <th>mbtag</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AR002UA1187B9A637D</td>
+      <td>uk</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AR006821187FB5192B</td>
+      <td>bass</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AR00A6H1187FB5402A</td>
+      <td>detroit</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>AR00B1I1187FB433EB</td>
+      <td>european</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>AR00FVC1187FB5BE3E</td>
+      <td>german</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>24767</th>
+      <td>ARZZ8O71187FB45FA4</td>
+      <td>punk</td>
+    </tr>
+    <tr>
+      <th>24769</th>
+      <td>ARZZMLS1187FB4F46C</td>
+      <td>rock and indie</td>
+    </tr>
+    <tr>
+      <th>24770</th>
+      <td>ARZZMWO1187B9AFB36</td>
+      <td>grindcore</td>
+    </tr>
+    <tr>
+      <th>24774</th>
+      <td>ARZZXT51187FB4627E</td>
+      <td>classic pop and rock</td>
+    </tr>
+    <tr>
+      <th>24775</th>
+      <td>ARZZYRB1187B99D0B6</td>
+      <td>jazz</td>
+    </tr>
+  </tbody>
+</table>
+<p>8838 rows × 2 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get all distinct values in the &#39;mb_tag&#39; column</span>
+<span class="n">distinct_tag</span> <span class="o">=</span> <span class="n">df_artist_mbtag</span><span class="p">[</span><span class="s1">&#39;mbtag&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="c1"># Display the result</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">distinct_tag</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>975
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_artist_term</span> <span class="o">=</span> <span class="n">df_artist_term</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s1">&#39;artist_id&#39;</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">)</span>
+
+<span class="n">df_artist_term</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[43]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>artist_id</th>
+      <th>term</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AR002UA1187B9A637D</td>
+      <td>garage rock</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>AR003FB1187B994355</td>
+      <td>rock</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>AR006821187FB5192B</td>
+      <td>orchestra</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>AR009211187B989185</td>
+      <td>lovers rock</td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <td>AR009SZ1187B9A73F4</td>
+      <td>chill-out</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1109272</th>
+      <td>ARZZXJY1187B99E2BB</td>
+      <td>world</td>
+    </tr>
+    <tr>
+      <th>1109284</th>
+      <td>ARZZXT51187FB4627E</td>
+      <td>blues-rock</td>
+    </tr>
+    <tr>
+      <th>1109329</th>
+      <td>ARZZYRB1187B99D0B6</td>
+      <td>acid jazz</td>
+    </tr>
+    <tr>
+      <th>1109354</th>
+      <td>ARZZYRH11C8A416A12</td>
+      <td>dark wave</td>
+    </tr>
+    <tr>
+      <th>1109367</th>
+      <td>ARZZZKG1271F573BC4</td>
+      <td>electronica</td>
+    </tr>
+  </tbody>
+</table>
+<p>43943 rows × 2 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[48]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get all distinct values in the &#39;term&#39; column</span>
+<span class="n">distinct_term</span> <span class="o">=</span> <span class="n">df_artist_term</span><span class="p">[</span><span class="s1">&#39;term&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="c1"># Display the result</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">distinct_term</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>760
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Merging">Merging<a class="anchor-link" href="#Merging">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Assuming you have the DataFrames songs_df and df_artist_term</span>
+<span class="c1"># Merge df_artist_term to songs_df based on the &#39;artist_id&#39; column</span>
+<span class="n">merged_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">songs_df</span><span class="p">,</span> <span class="n">df_artist_term</span><span class="p">[[</span><span class="s1">&#39;artist_id&#39;</span><span class="p">,</span> <span class="s1">&#39;term&#39;</span><span class="p">]],</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;artist_id&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+
+<span class="c1"># If there are multiple rows with the same &#39;artist_id&#39; in df_artist_term, this will bring in the first occurrence.</span>
+<span class="c1"># If you want to bring in the last occurrence, you can use how=&#39;right&#39; instead of how=&#39;left&#39;.</span>
+
+<span class="c1"># If you want to modify the original DataFrame in place, you can use the &#39;inplace&#39; parameter:</span>
+<span class="c1"># songs_df = pd.merge(songs_df, df_artist_term[[&#39;artist_id&#39;, &#39;term&#39;]], on=&#39;artist_id&#39;, how=&#39;left&#39;)</span>
+
+<span class="c1"># Display the resulting DataFrame</span>
+<span class="n">merged_df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[49]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>title</th>
+      <th>song_id</th>
+      <th>release</th>
+      <th>artist_id</th>
+      <th>artist_name</th>
+      <th>duration</th>
+      <th>artist_familiarity</th>
+      <th>score</th>
+      <th>year</th>
+      <th>duration_minutes</th>
+      <th>difference_fam_score</th>
+      <th>artist_release</th>
+      <th>term</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Out Of The Blue 2010</td>
+      <td>SOCHFMY12AB018975B</td>
+      <td>Out Of The Blue</td>
+      <td>ARGBB761187B9AEFE9</td>
+      <td>System F</td>
+      <td>185.93914</td>
+      <td>0.620266</td>
+      <td>0.388497</td>
+      <td>2010</td>
+      <td>3.098986</td>
+      <td>0.231770</td>
+      <td>System F - Out Of The Blue</td>
+      <td>hard trance</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Intermission 2</td>
+      <td>SOATBYN12AB01895C0</td>
+      <td>Life Is Sweet! Nice To Meet You</td>
+      <td>AROLOHV1187FB4231D</td>
+      <td>Lightspeed Champion</td>
+      <td>38.60853</td>
+      <td>0.727369</td>
+      <td>0.481055</td>
+      <td>2010</td>
+      <td>0.643475</td>
+      <td>0.246314</td>
+      <td>Lightspeed Champion - Life Is Sweet! Nice To M...</td>
+      <td>indie rock</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>For Annabelle</td>
+      <td>SODESHG12AB0186969</td>
+      <td>Infinite Arms</td>
+      <td>ARIUYZD1187FB59892</td>
+      <td>Band Of Horses</td>
+      <td>186.12200</td>
+      <td>0.767081</td>
+      <td>0.593106</td>
+      <td>2010</td>
+      <td>3.102033</td>
+      <td>0.173975</td>
+      <td>Band Of Horses - Infinite Arms</td>
+      <td>southern rock</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>The Visitor</td>
+      <td>SORVIEW12AB018B5E0</td>
+      <td>Betrayal_ Justice; Revenge</td>
+      <td>ARG1X0Q1187FB57C48</td>
+      <td>Kivimetsän Druidi</td>
+      <td>241.21424</td>
+      <td>0.593914</td>
+      <td>0.414141</td>
+      <td>2010</td>
+      <td>4.020237</td>
+      <td>0.179773</td>
+      <td>Kivimetsän Druidi - Betrayal_ Justice; Revenge</td>
+      <td>folk rock</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Ironbound</td>
+      <td>SOOCBAK12AB018CA8B</td>
+      <td>Ironbound</td>
+      <td>ARIZ6AI1187FB5197C</td>
+      <td>Overkill</td>
+      <td>393.03791</td>
+      <td>0.686395</td>
+      <td>0.510050</td>
+      <td>2010</td>
+      <td>6.550632</td>
+      <td>0.176345</td>
+      <td>Overkill - Ironbound</td>
+      <td>speed metal</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>504467</th>
+      <td>Mandela You're Free</td>
+      <td>SOEHRCG12A81C21A2A</td>
+      <td>Turning Point</td>
+      <td>AR1SUNB1187FB41BC8</td>
+      <td>Barrington Levy</td>
+      <td>224.91383</td>
+      <td>0.669587</td>
+      <td>0.414859</td>
+      <td>1922</td>
+      <td>3.748564</td>
+      <td>0.254728</td>
+      <td>Barrington Levy - Turning Point</td>
+      <td>roots reggae</td>
+    </tr>
+    <tr>
+      <th>504468</th>
+      <td>Warm And Sunny Day</td>
+      <td>SOAQIEA12A81C21A18</td>
+      <td>Turning Point</td>
+      <td>AR1SUNB1187FB41BC8</td>
+      <td>Barrington Levy</td>
+      <td>243.82649</td>
+      <td>0.669587</td>
+      <td>0.414859</td>
+      <td>1922</td>
+      <td>4.063775</td>
+      <td>0.254728</td>
+      <td>Barrington Levy - Turning Point</td>
+      <td>roots reggae</td>
+    </tr>
+    <tr>
+      <th>504469</th>
+      <td>Don't Pan Me</td>
+      <td>SODAWZF12A6D4FCB4B</td>
+      <td>Alberta Hunter Vol. 1 (1921-1923)</td>
+      <td>ARMCOBI1187B9A0BC8</td>
+      <td>Alberta Hunter</td>
+      <td>180.40118</td>
+      <td>0.489134</td>
+      <td>0.349621</td>
+      <td>1922</td>
+      <td>3.006686</td>
+      <td>0.139513</td>
+      <td>Alberta Hunter - Alberta Hunter Vol. 1 (1921-1...</td>
+      <td>classic female blues</td>
+    </tr>
+    <tr>
+      <th>504470</th>
+      <td>Warm And Sunny Day</td>
+      <td>SODIEDT12AB018A10D</td>
+      <td>Black &amp; White Vol. 2: Reggae Classics</td>
+      <td>AR1SUNB1187FB41BC8</td>
+      <td>Barrington Levy</td>
+      <td>217.33832</td>
+      <td>0.669587</td>
+      <td>0.414859</td>
+      <td>1922</td>
+      <td>3.622305</td>
+      <td>0.254728</td>
+      <td>Barrington Levy - Black &amp; White Vol. 2: Reggae...</td>
+      <td>roots reggae</td>
+    </tr>
+    <tr>
+      <th>504471</th>
+      <td>Something In My Heart (Full Vocal)</td>
+      <td>SOEHUSE12A81C21A34</td>
+      <td>Turning Point</td>
+      <td>AR1SUNB1187FB41BC8</td>
+      <td>Barrington Levy</td>
+      <td>238.60200</td>
+      <td>0.669587</td>
+      <td>0.414859</td>
+      <td>1922</td>
+      <td>3.976700</td>
+      <td>0.254728</td>
+      <td>Barrington Levy - Turning Point</td>
+      <td>roots reggae</td>
+    </tr>
+  </tbody>
+</table>
+<p>504472 rows × 13 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[57]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#To make it shorter going forward</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">merged_df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[58]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;final_data.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[59]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Shortcut to final data if needed</span>
+<span class="c1"># df = pd.read_csv(&#39;/Users/michaelbyrd/Desktop/MIS548/final_data.csv&#39;)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Data-Exploration">Data Exploration<a class="anchor-link" href="#Data-Exploration">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[60]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Group by &#39;song_id&#39; and count occurrences</span>
@@ -15650,7 +18245,7 @@ Name: song_id, Length: 728, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[61]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Group by &#39;song_id&#39;, &#39;title&#39; and count occurrences</span>
@@ -15709,7 +18304,7 @@ Length: 31748, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[62]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Sort the DataFrame by &#39;duration&#39; from longest to shortest</span>
@@ -15739,43 +18334,43 @@ Length: 31748, dtype: int64
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>        year                   release                           title  \
-725906  2005              Monolithe II                    Monolithe II   
-459327  2009                  Mixshake                        Mixshake   
-963219  2006           Warlords of Pez                   World Control   
-729758  2007            El Camino Real                  El Camino Real   
-507830  2005  The Garden Of Brokenness        The Garden Of Brokenness   
+181731  2005              Monolithe II                    Monolithe II   
+33425   2009                  Mixshake                        Mixshake   
+124379  2006           Warlords of Pez                   World Control   
+111139  2007            El Camino Real                  El Camino Real   
+173591  2005  The Garden Of Brokenness        The Garden Of Brokenness   
 ...      ...                       ...                             ...   
-827416  2006             Adam Arcuragi       The Screen (Philadelphia)   
-893883  2002                   Rip It!                            Holy   
-43732   2009                    Animal                          Animal   
-119701  2008                    Public  Bernard Lavilliers [En Public]   
-827893  2004                    Indigo          Rainy Days And Mondays   
+132290  2006             Adam Arcuragi       The Screen (Philadelphia)   
+240740  2002                   Rip It!                            Holy   
+21732   2009                    Animal                          Animal   
+51935   2008                    Public  Bernard Lavilliers [En Public]   
+194145  2004                    Indigo          Rainy Days And Mondays   
 
                artist_name  artist_familiarity     score  \
-725906           Monolithe            0.462751  0.286047   
-459327             Missill            0.604451  0.357594   
-963219     Warlords of Pez            0.475417  0.201340   
-729758    William Basinski            0.643163  0.473583   
-507830    William Basinski            0.643163  0.473583   
+181731           Monolithe            0.462751  0.286047   
+33425              Missill            0.604451  0.357594   
+124379     Warlords of Pez            0.475417  0.201340   
+111139    William Basinski            0.643163  0.473583   
+173591    William Basinski            0.643163  0.473583   
 ...                    ...                 ...       ...   
-827416       Adam Arcuragi            0.520172  0.346374   
-893883      John Starlight            0.515129  0.359385   
-43732           Miike Snow            0.769747  0.558897   
-119701      Fatals Picards            0.578948  0.382058   
-827893  Olivia Newton-John            0.691605  0.457835   
+132290       Adam Arcuragi            0.520172  0.346374   
+240740      John Starlight            0.515129  0.359385   
+21732           Miike Snow            0.769747  0.558897   
+51935       Fatals Picards            0.578948  0.382058   
+194145  Olivia Newton-John            0.691605  0.457835   
 
         difference_fam_score  duration_minutes  
-725906              0.176704         50.411094  
-459327              0.246857         50.128972  
-963219              0.274077         50.093271  
-729758              0.169580         49.991829  
-507830              0.169580         49.782850  
+181731              0.176704         50.411094  
+33425               0.246857         50.128972  
+124379              0.274077         50.093271  
+111139              0.169580         49.991829  
+173591              0.169580         49.782850  
 ...                      ...               ...  
-827416              0.173798          0.011312  
-893883              0.155745          0.010006  
-43732               0.210851          0.009571  
-119701              0.196889          0.007394  
-827893              0.233770          0.005217  
+132290              0.173798          0.011312  
+240740              0.155745          0.010006  
+21732               0.210851          0.009571  
+51935               0.196889          0.007394  
+194145              0.233770          0.005217  
 
 [504472 rows x 8 columns]
 </pre>
@@ -15791,7 +18386,7 @@ Length: 31748, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[63]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Group by &#39;year&#39; and get the count of songs for each year</span>
@@ -15937,7 +18532,7 @@ Length: 31748, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[64]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Bar chart for the top 10 artists with the most songs</span>
@@ -15989,12 +18584,28 @@ class="
 
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[65]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Calculate the cumulative score for each artist</span>
@@ -16050,7 +18661,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[66]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Calculate the cumulative score for each artist</span>
@@ -16106,7 +18717,63 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[75]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Calculate the cumulative score for each artist</span>
+<span class="n">release_score</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;term&#39;</span><span class="p">)[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Select the top 10 artists by score</span>
+<span class="n">top_10_artists</span> <span class="o">=</span> <span class="n">release_score</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Bar chart for the top 10 releases by score</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">top_10_artists</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;teal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Top 10 Terms by Score&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Terms&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Score&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA/YAAAJqCAYAAACBy9vYAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjguMCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy81sbWrAAAACXBIWXMAAA9hAAAPYQGoP6dpAAB0JUlEQVR4nO3deVhU5f//8deIyCaMKyBFrqSiqKmJaKXlnkpmH60stFzT0nDJ9NNXBTfUSi1tMTP3rU0/WYaoFWWuabhFlOZaoFYILggK5/eHl/NrRM0MOJ7x+biuuS7mPveceZ9jMbzmvs99bIZhGAIAAAAAAJZUzOwCAAAAAADAjSPYAwAAAABgYQR7AAAAAAAsjGAPAAAAAICFEewBAAAAALAwgj0AAAAAABZGsAcAAAAAwMII9gAAAAAAWBjBHgAAAAAACyPYAwBuKTab7boeX331VaHXsmDBAj322GOqXr26ihUrpkqVKl217+nTpxUdHa2goCB5enqqXr16WrZs2TX3f/Dgwes+3oMHDxbswRWBS8f3yiuvFPp7JScnKyoqSlWqVJGnp6fKlSun+vXr67nnnlNmZmahvz8AANdS3OwCAAAoSps2bXJ6Pm7cOH355Zf64osvnNpDQ0MLvZaFCxcqLS1NjRo1Ul5ens6fP3/Vvp07d9a2bds0adIk3XnnnVqyZIkef/xx5eXlqVu3bld8TYUKFfId74ABA5SRkaHFixfn64sr+/7779W0aVPVrFlTo0ePVqVKlfT7779r586dWrZsmYYNGyY/Pz+zywQA3MJshmEYZhcBAIBZnnrqKX344Yc6ffp0kb93Xl6eihW7OHmuQ4cO2rNnzxVHzlevXq327ds7wvwlrVu31t69e3X48GG5ubld13s2b95cv//+u/bs2fOv6zcMQ+fOnZOXl9e/3teNOHjwoCpXrqyXX35Zw4YNK7T36dGjhz766COlpqbK19c333bDMGSz2Qrt/f/q7Nmz8vb2LpL3AgBYB1PxAQC4zJ9//qkBAwbotttuU4kSJVSlShW99NJLys7Odupns9n03HPPadasWbrzzjvl4eGh0NDQv50if8mlUP93VqxYoZIlS6pLly5O7U8//bR+++03bdmy5foO7CoyMzM1bNgwVa5cWSVKlNBtt92m6OhonTlzxqnfpeN9++23VbNmTXl4eGj+/PmaN2+ebDabvvjiC/Xp00dly5aVn5+funfvrjNnzigtLU1du3ZVqVKlVKFCBQ0bNizf7IS33npLdevWVcmSJeXr66saNWrov//973XVn5eXpwkTJuiOO+6Qp6enGjZsqPXr1zu2f/PNN7LZbFq6dGm+1y5YsEA2m03btm276v7/+OMP+fn5qWTJklfcfnmoj4+PV4sWLWS32+Xt7a2aNWsqLi7Oqc8nn3yiiIgIeXt7y9fXV61atco3uyImJkY2m007duzQf/7zH5UuXVpVq1aVdPHLhDfffFP16tWTl5eXSpcurf/85z/65Zdfrn2yAAAuiWAPAMBfnDt3Tvfff78WLFigIUOG6LPPPtOTTz6pKVOmqHPnzvn6f/LJJ3r99dc1duxYffjhh6pYsaIef/xxffjhhwVW0549e1SzZk0VL+58BV2dOnUc22/U2bNn1axZM82fP1+DBg3S559/rhdffFHz5s1TZGSkLp/Yt3LlSr311lsaPXq01qxZo3vvvdexrXfv3rLb7Vq2bJn+7//+T0uWLFGfPn3Uvn171a1bVx9++KF69OihV199VTNmzHC8btmyZRowYICaNWumFStWaOXKlRo8eHC+LxauZubMmYqPj9f06dO1aNEiFStWTO3atXME5XvvvVd33XWX3njjjSu+9u6779bdd9991f1HREQoNTVVTzzxhBITE5WVlXXVvnPmzNGDDz6ovLw8vf3221q1apUGDRqko0ePOvosWbJEDz30kPz8/LR06VLNmTNH6enpat68uTZs2JBvn507d1a1atX0wQcf6O2335Yk9evXT9HR0WrZsqVWrlypN998U3v37lWTJk107Nix6zpvAAAXYgAAcAvr0aOH4ePj43j+9ttvG5KM999/36nf5MmTDUlGQkKCo02S4eXlZaSlpTnaLly4YNSoUcOoVq3aP6qjffv2RsWKFa+4LSQkxGjTpk2+9t9++82QZEycOPG636dZs2ZGrVq1HM/j4uKMYsWKGdu2bXPq9+GHHxqSjNWrVzvaJBl2u934888/nfrOnTvXkGQMHDjQqb1Tp06GJGPq1KlO7fXq1TPq16/veP7cc88ZpUqVuu5juOTAgQOGJCMoKMjIyspytGdmZhplypQxWrZsma/G77//3tG2detWQ5Ixf/78a77PuXPnHMciyXBzczPuuusu46WXXjKOHz/u6Hfq1CnDz8/PuOeee4y8vLwr7is3N9cICgoywsLCjNzcXKfX+vv7G02aNHG0jRkzxpBkjB492mkfmzZtMiQZr776qlP7kSNHDC8vL2P48OHXPB4AgOthxB4AgL/44osv5OPjo//85z9O7U899ZQkOU3xlqQWLVooICDA8dzNzU2PPvqo9u3b5zRK+29d6xruf3N996effqratWurXr16unDhguPRpk2bK94d4IEHHlDp0qWvuK8OHTo4Pa9Zs6YkqX379vnaDx065HjeqFEjnTx5Uo8//rj+97//6ffff/9Hx9C5c2d5eno6nvv6+qpjx476+uuvlZubK0l6/PHH5e/v7zRqP2PGDJUvX16PPvroNffv4eGhFStW6IcfftC0adP02GOP6cSJE5owYYJq1qyplJQUSdLGjRuVmZmpAQMGXPXfJCUlRb/99puioqKcLsUoWbKkHnnkEW3evFlnz551es0jjzzi9PzTTz+VzWbTk08+6fRvFhgYqLp16xbJHR0AADcXgj0AAH/xxx9/KDAwMF8w8/f3V/HixfXHH384tQcGBubbx6W2y/veqLJly15xX3/++ackqUyZMje872PHjmnXrl1yd3d3evj6+sowjHwh+1qr519eR4kSJa7afu7cOcfzqKgovffeezp06JAeeeQR+fv7Kzw8XGvXrr2uY7jav0FOTo5jUUQPDw/169dPS5Ys0cmTJ3XixAm9//776t27tzw8PK7rfWrWrKno6GgtWrRIhw8f1tSpU/XHH39o1KhRkqQTJ05Ikm6//far7uPSv+OVzmNQUJDy8vKUnp7u1H5532PHjskwDAUEBOT7d9u8efM//mIEAGB93O4OAIC/KFu2rLZs2ZJvpfPjx4/rwoULKleunFP/tLS0fPu41Fa2bNkCqSksLExLly7VhQsXnK6z3717tySpdu3aN7zvcuXKycvLS++9995Vt/9VYa3+/vTTT+vpp5/WmTNn9PXXX2vMmDHq0KGDfvrpJ1WsWPGar73av0GJEiWcFrzr37+/Jk2apPfee0/nzp3ThQsX9Mwzz9xQvTabTYMHD9bYsWMdaxyUL19ekq45U+PSfxOpqan5tv32228qVqxYvhkRl5/zcuXKyWaz6ZtvvrnilxLX+0UFAMB1MGIPAMBftGjRQqdPn9bKlSud2hcsWODY/lfr1693WqwsNzdXy5cvV9WqVa85cvtPPPzwwzp9+rQ++ugjp/b58+crKChI4eHhN7zvDh06aP/+/SpbtqwaNmyY71GpUqV/Wf0/4+Pjo3bt2umll15STk6O9u7d+7ev+fjjj51mAJw6dUqrVq3Svffe63QbwAoVKqhLly5688039fbbb6tjx4664447/nb/Vwrh0sUgnpmZqaCgIElSkyZNZLfb9fbbb+dbdPCS6tWr67bbbtOSJUuc+pw5c0YfffSRY6X8a+nQoYMMw9Cvv/56xX+zsLCwvz0mAIBrYcQeAIC/6N69u9544w316NFDBw8eVFhYmDZs2KCJEyfqwQcfVMuWLZ36lytXTg888IBGjRolHx8fvfnmm/rxxx+v65Z3P/zwg3744QdJF0eYz54961hNPzQ0VKGhoZKkdu3aqVWrVurfv78yMzNVrVo1LV26VPHx8Vq0aNF138P+SqKjo/XRRx/pvvvu0+DBg1WnTh3l5eXp8OHDSkhI0NChQ//VFwfXo0+fPvLy8lLTpk1VoUIFpaWlKS4uTna7/Zqr1V/i5uamVq1aaciQIcrLy9PkyZOVmZmp2NjYfH2ff/55x/HMnTv3uurr27evTp48qUceeUS1a9eWm5ubfvzxR02bNk3FihXTiy++KOnidfKvvvqqevfurZYtW6pPnz4KCAjQvn37tHPnTs2cOVPFihXTlClT9MQTT6hDhw7q16+fsrOz9fLLL+vkyZOaNGnS39bTtGlT9e3bV08//bS+++473XffffLx8VFqaqo2bNigsLAw9e/f/7qODQDgGgj2AAD8haenp7788ku99NJLevnll3XixAnddtttGjZsmMaMGZOvf2RkpGrVqqX/+7//0+HDh1W1alUtXrz4bxdkk6T3338/X/i8dK/6MWPGKCYmxtH+8ccf66WXXtLo0aP1559/qkaNGlq6dKkee+yxf3W8Pj4++uabbzRp0iS98847OnDggLy8vHTHHXeoZcuWRTJif++992revHl6//33lZ6ernLlyumee+7RggULHNPbr+W5557TuXPnNGjQIB0/fly1atXSZ599pqZNm+br26hRI1WqVEleXl75Zl9czcCBA7V8+XLNnj1bv/76q86cOaPy5csrIiJCCxYsUOPGjR19e/XqpaCgIE2ePFm9e/eWYRiqVKmSevTo4ejTrVs3+fj4KC4uTo8++qjc3NzUuHFjffnll2rSpMl11TRr1iw1btxYs2bN0ptvvqm8vDwFBQWpadOmatSo0XXtAwDgOmzG1eaKAQCAa7LZbHr22Wc1c+ZMs0vBddq1a5fq1q2rN954QwMGDDC7HAAACgQj9gAAwOXt379fhw4d0n//+19VqFDBcftCAABcAYvnAQAAlzdu3Di1atVKp0+f1gcffPC3C9QBAGAlTMUHAAAAAMDCGLEHAAAAAMDCCPYAAAAAAFgYi+ddp7y8PP3222/y9fWVzWYzuxwAAAAAgIszDEOnTp1SUFCQihW7+rg8wf46/fbbbwoODja7DAAAAADALebIkSO6/fbbr7rd1GB/4cIFxcTEaPHixUpLS3Pcfub//u//HN9GGIah2NhYvfPOO0pPT1d4eLjeeOMN1apVy7Gf7OxsDRs2TEuXLlVWVpZatGihN9980+nA09PTNWjQIH3yySeSpMjISM2YMUOlSpW6rlp9fX0lXTyhfn5+BXQGAAAAAAC4sszMTAUHBzvy6NWYGuwnT56st99+W/Pnz1etWrX03Xff6emnn5bdbtfzzz8vSZoyZYqmTp2qefPm6c4779T48ePVqlUrpaSkOA4uOjpaq1at0rJly1S2bFkNHTpUHTp00Pbt2+Xm5iZJ6tatm44ePar4+HhJUt++fRUVFaVVq1ZdV62Xpt/7+fkR7AEAAAAARebvLgc39XZ3HTp0UEBAgObMmeNoe+SRR+Tt7a2FCxfKMAwFBQUpOjpaL774oqSLo/MBAQGaPHmy+vXrp4yMDJUvX14LFy7Uo48+Kun/T5tfvXq12rRpo+TkZIWGhmrz5s0KDw+XJG3evFkRERH68ccfVb169b+tNTMzU3a7XRkZGQR7AAAAAEChu94cauqq+Pfcc4/Wr1+vn376SZK0c+dObdiwQQ8++KAk6cCBA0pLS1Pr1q0dr/Hw8FCzZs20ceNGSdL27dt1/vx5pz5BQUGqXbu2o8+mTZtkt9sdoV6SGjduLLvd7uhzuezsbGVmZjo9AAAAAAC42Zg6Ff/FF19URkaGatSoITc3N+Xm5mrChAl6/PHHJUlpaWmSpICAAKfXBQQE6NChQ44+JUqUUOnSpfP1ufT6tLQ0+fv753t/f39/R5/LxcXFKTY29t8dIAAAAAAAhczUEfvly5dr0aJFWrJkiXbs2KH58+frlVde0fz58536XX49gWEYf3uNweV9rtT/WvsZOXKkMjIyHI8jR45c72EBAAAAAFBkTB2xf+GFFzRixAg99thjkqSwsDAdOnRIcXFx6tGjhwIDAyXJsWL+JcePH3eM4gcGBionJ0fp6elOo/bHjx9XkyZNHH2OHTuW7/1PnDiRbzbAJR4eHvLw8CiYAwUAAAAAoJCYOmJ/9uxZx23tLnFzc1NeXp4kqXLlygoMDNTatWsd23NycpSYmOgI7Q0aNJC7u7tTn9TUVO3Zs8fRJyIiQhkZGdq6daujz5YtW5SRkeHoAwAAAACAFZk6Yt+xY0dNmDBBd9xxh2rVqqXvv/9eU6dOVc+ePSVdnD4fHR2tiRMnKiQkRCEhIZo4caK8vb3VrVs3SZLdblevXr00dOhQlS1bVmXKlNGwYcMUFhamli1bSpJq1qyptm3bqk+fPpo1a5aki7e769Chw3WtiA8AAAAAwM3K1GA/Y8YMjRo1SgMGDNDx48cVFBSkfv36afTo0Y4+w4cPV1ZWlgYMGKD09HSFh4crISHBcQ97SZo2bZqKFy+url27KisrSy1atNC8efMc97CXpMWLF2vQoEGO1fMjIyM1c+bMojtYAAAAAAAKgan3sbcS7mMPAAAAAChKlriPPQAAAAAA+HcI9gAAAAAAWBjBHgAAAAAACyPYAwAAAABgYQR7AAAAAAAsjGAPAAAAAICFEewBAAAAALAwgj0AAAAAABZGsAcAAAAAwMII9gAAAAAAWFhxswvARbbYWLNLuGHGmDFmlwAAAAAAtyxG7AEAAAAAsDCCPQAAAAAAFkawBwAAAADAwgj2AAAAAABYGMEeAAAAAAALI9gDAAAAAGBhBHsAAAAAACyMYA8AAAAAgIUR7AEAAAAAsDCCPQAAAAAAFkawBwAAAADAwgj2AAAAAABYGMEeAAAAAAALI9gDAAAAAGBhBHsAAAAAACyMYA8AAAAAgIUR7AEAAAAAsDCCPQAAAAAAFkawBwAAAADAwgj2AAAAAABYGMEeAAAAAAALI9gDAAAAAGBhBHsAAAAAACyMYA8AAAAAgIUR7AEAAAAAsDCCPQAAAAAAFkawBwAAAADAwgj2AAAAAABYGMEeAAAAAAALI9gDAAAAAGBhBHsAAAAAACyMYA8AAAAAgIUR7AEAAAAAsDCCPQAAAAAAFkawBwAAAADAwkwN9pUqVZLNZsv3ePbZZyVJhmEoJiZGQUFB8vLyUvPmzbV3716nfWRnZ2vgwIEqV66cfHx8FBkZqaNHjzr1SU9PV1RUlOx2u+x2u6KionTy5MmiOkwAAAAAAAqNqcF+27ZtSk1NdTzWrl0rSerSpYskacqUKZo6dapmzpypbdu2KTAwUK1atdKpU6cc+4iOjtaKFSu0bNkybdiwQadPn1aHDh2Um5vr6NOtWzclJSUpPj5e8fHxSkpKUlRUVNEeLAAAAAAAhcBmGIZhdhGXREdH69NPP9XPP/8sSQoKClJ0dLRefPFFSRdH5wMCAjR58mT169dPGRkZKl++vBYuXKhHH31UkvTbb78pODhYq1evVps2bZScnKzQ0FBt3rxZ4eHhkqTNmzcrIiJCP/74o6pXr35dtWVmZsputysjI0N+fn4Ffuy22NgC32dRMcaMMbsEAAAAAHA515tDb5pr7HNycrRo0SL17NlTNptNBw4cUFpamlq3bu3o4+HhoWbNmmnjxo2SpO3bt+v8+fNOfYKCglS7dm1Hn02bNslutztCvSQ1btxYdrvd0edKsrOzlZmZ6fQAAAAAAOBmc9ME+5UrV+rkyZN66qmnJElpaWmSpICAAKd+AQEBjm1paWkqUaKESpcufc0+/v7++d7P39/f0edK4uLiHNfk2+12BQcH3/CxAQAAAABQWG6aYD9nzhy1a9dOQUFBTu02m83puWEY+doud3mfK/X/u/2MHDlSGRkZjseRI0eu5zAAAAAAAChSN0WwP3TokNatW6fevXs72gIDAyUp36j68ePHHaP4gYGBysnJUXp6+jX7HDt2LN97njhxIt9sgL/y8PCQn5+f0wMAAAAAgJvNTRHs586dK39/f7Vv397RVrlyZQUGBjpWypcuXoefmJioJk2aSJIaNGggd3d3pz6pqanas2ePo09ERIQyMjK0detWR58tW7YoIyPD0QcAAAAAAKsqbnYBeXl5mjt3rnr06KHixf9/OTabTdHR0Zo4caJCQkIUEhKiiRMnytvbW926dZMk2e129erVS0OHDlXZsmVVpkwZDRs2TGFhYWrZsqUkqWbNmmrbtq369OmjWbNmSZL69u2rDh06XPeK+AAAAAAA3KxMD/br1q3T4cOH1bNnz3zbhg8frqysLA0YMEDp6ekKDw9XQkKCfH19HX2mTZum4sWLq2vXrsrKylKLFi00b948ubm5OfosXrxYgwYNcqyeHxkZqZkzZxb+wQEAAAAAUMhuqvvY38y4j/3VcR97AAAAACh4lruPPQAAAAAA+OcI9gAAAAAAWBjBHgAAAAAACyPYAwAAAABgYQR7AAAAAAAsjGAPAAAAAICFEewBAAAAALAwgj0AAAAAABZGsAcAAAAAwMII9gAAAAAAWBjBHgAAAAAACyPYAwAAAABgYQR7AAAAAAAsjGAPAAAAAICFEewBAAAAALAwgj0AAAAAABZGsAcAAAAAwMII9gAAAAAAWBjBHgAAAAAACyPYAwAAAABgYQR7AAAAAAAsjGAPAAAAAICFEewBAAAAALAwgj0AAAAAABZGsAcAAAAAwMII9gAAAAAAWBjBHgAAAAAACyPYAwAAAABgYQR7AAAAAAAsjGAPAAAAAICFEewBAAAAALAwgj0AAAAAABZGsAcAAAAAwMII9gAAAAAAWBjBHgAAAAAACyPYAwAAAABgYQR7AAAAAAAsjGAPAAAAAICFEewBAAAAALCw4mYXAJjFFhtrdgk3zBgzxuwSAAAAANwkGLEHAAAAAMDCCPYAAAAAAFgYwR4AAAAAAAsj2AMAAAAAYGEEewAAAAAALIxgDwAAAACAhZke7H/99Vc9+eSTKlu2rLy9vVWvXj1t377dsd0wDMXExCgoKEheXl5q3ry59u7d67SP7OxsDRw4UOXKlZOPj48iIyN19OhRpz7p6emKioqS3W6X3W5XVFSUTp48WRSHCAAAAABAoTE12Kenp6tp06Zyd3fX559/rh9++EGvvvqqSpUq5egzZcoUTZ06VTNnztS2bdsUGBioVq1a6dSpU44+0dHRWrFihZYtW6YNGzbo9OnT6tChg3Jzcx19unXrpqSkJMXHxys+Pl5JSUmKiooqysMFAAAAAKDAFTfzzSdPnqzg4GDNnTvX0VapUiXHz4ZhaPr06XrppZfUuXNnSdL8+fMVEBCgJUuWqF+/fsrIyNCcOXO0cOFCtWzZUpK0aNEiBQcHa926dWrTpo2Sk5MVHx+vzZs3Kzw8XJI0e/ZsRUREKCUlRdWrVy+6gwYAAAAAoACZOmL/ySefqGHDhurSpYv8/f111113afbs2Y7tBw4cUFpamlq3bu1o8/DwULNmzbRx40ZJ0vbt23X+/HmnPkFBQapdu7ajz6ZNm2S32x2hXpIaN24su93u6HO57OxsZWZmOj0AAAAAALjZmBrsf/nlF7311lsKCQnRmjVr9Mwzz2jQoEFasGCBJCktLU2SFBAQ4PS6gIAAx7a0tDSVKFFCpUuXvmYff3//fO/v7+/v6HO5uLg4x/X4drtdwcHB/+5gAQAAAAAoBKYG+7y8PNWvX18TJ07UXXfdpX79+qlPnz566623nPrZbDan54Zh5Gu73OV9rtT/WvsZOXKkMjIyHI8jR45c72EBAAAAAFBkTA32FSpUUGhoqFNbzZo1dfjwYUlSYGCgJOUbVT9+/LhjFD8wMFA5OTlKT0+/Zp9jx47le/8TJ07kmw1wiYeHh/z8/JweAAAAAADcbEwN9k2bNlVKSopT208//aSKFStKkipXrqzAwECtXbvWsT0nJ0eJiYlq0qSJJKlBgwZyd3d36pOamqo9e/Y4+kRERCgjI0Nbt2519NmyZYsyMjIcfQAAAAAAsCJTV8UfPHiwmjRpookTJ6pr167aunWr3nnnHb3zzjuSLk6fj46O1sSJExUSEqKQkBBNnDhR3t7e6tatmyTJbrerV69eGjp0qMqWLasyZcpo2LBhCgsLc6ySX7NmTbVt21Z9+vTRrFmzJEl9+/ZVhw4dWBEfAAAAAGBppgb7u+++WytWrNDIkSM1duxYVa5cWdOnT9cTTzzh6DN8+HBlZWVpwIABSk9PV3h4uBISEuTr6+voM23aNBUvXlxdu3ZVVlaWWrRooXnz5snNzc3RZ/HixRo0aJBj9fzIyEjNnDmz6A4WAAAAAIBCYDMMwzC7CCvIzMyU3W5XRkZGoVxvb4uNLfB9FhVjzBizS7ghnHMAAAAAN7PrzaGmXmMPAAAAAAD+HYI9AAAAAAAWRrAHAAAAAMDCCPYAAAAAAFgYwR4AAAAAAAsj2AMAAAAAYGEEewAAAAAALIxgDwAAAACAhRHsAQAAAACwMII9AAAAAAAWRrAHAAAAAMDCCPYAAAAAAFgYwR4AAAAAAAsj2AMAAAAAYGEEewAAAAAALIxgDwAAAACAhRHsAQAAAACwMII9AAAAAAAWRrAHAAAAAMDCCPYAAAAAAFgYwR4AAAAAAAsj2AMAAAAAYGEEewAAAAAALIxgDwAAAACAhRHsAQAAAACwMII9AAAAAAAWRrAHAAAAAMDCCPYAAAAAAFgYwR4AAAAAAAsj2AMAAAAAYGEEewAAAAAALIxgDwAAAACAhRHsAQAAAACwMII9AAAAAAAWRrAHAAAAAMDCCPYAAAAAAFgYwR4AAAAAAAsj2AMAAAAAYGEEewAAAAAALIxgDwAAAACAhRHsAQAAAACwsOJmFwDg1mGLjTW7hBtmjBljdgkAAADAFTFiDwAAAACAhRHsAQAAAACwMII9AAAAAAAWRrAHAAAAAMDCCPYAAAAAAFiYqcE+JiZGNpvN6REYGOjYbhiGYmJiFBQUJC8vLzVv3lx79+512kd2drYGDhyocuXKycfHR5GRkTp69KhTn/T0dEVFRclut8tutysqKkonT54sikMEAAAAAKBQmT5iX6tWLaWmpjoeu3fvdmybMmWKpk6dqpkzZ2rbtm0KDAxUq1atdOrUKUef6OhorVixQsuWLdOGDRt0+vRpdejQQbm5uY4+3bp1U1JSkuLj4xUfH6+kpCRFRUUV6XECAAAAAFAYTL+PffHixZ1G6S8xDEPTp0/XSy+9pM6dO0uS5s+fr4CAAC1ZskT9+vVTRkaG5syZo4ULF6ply5aSpEWLFik4OFjr1q1TmzZtlJycrPj4eG3evFnh4eGSpNmzZysiIkIpKSmqXr36FevKzs5Wdna243lmZmZBHzoAAAAAAP+a6SP2P//8s4KCglS5cmU99thj+uWXXyRJBw4cUFpamlq3bu3o6+HhoWbNmmnjxo2SpO3bt+v8+fNOfYKCglS7dm1Hn02bNslutztCvSQ1btxYdrvd0edK4uLiHFP37Xa7goODC/S4AQAAAAAoCKYG+/DwcC1YsEBr1qzR7NmzlZaWpiZNmuiPP/5QWlqaJCkgIMDpNQEBAY5taWlpKlGihEqXLn3NPv7+/vne29/f39HnSkaOHKmMjAzH48iRI//qWAEAAAAAKAymTsVv166d4+ewsDBFRESoatWqmj9/vho3bixJstlsTq8xDCNf2+Uu73Ol/n+3Hw8PD3l4eFzXcQAAAAAAYBbTp+L/lY+Pj8LCwvTzzz87rru/fFT9+PHjjlH8wMBA5eTkKD09/Zp9jh07lu+9Tpw4kW82AAAAAAAAVnNTBfvs7GwlJyerQoUKqly5sgIDA7V27VrH9pycHCUmJqpJkyaSpAYNGsjd3d2pT2pqqvbs2ePoExERoYyMDG3dutXRZ8uWLcrIyHD0AQAAAADAqkydij9s2DB17NhRd9xxh44fP67x48crMzNTPXr0kM1mU3R0tCZOnKiQkBCFhIRo4sSJ8vb2Vrdu3SRJdrtdvXr10tChQ1W2bFmVKVNGw4YNU1hYmGOV/Jo1a6pt27bq06ePZs2aJUnq27evOnTocNUV8QEAAAAAsApTg/3Ro0f1+OOP6/fff1f58uXVuHFjbd68WRUrVpQkDR8+XFlZWRowYIDS09MVHh6uhIQE+fr6OvYxbdo0FS9eXF27dlVWVpZatGihefPmyc3NzdFn8eLFGjRokGP1/MjISM2cObNoDxYAAAAAgEJgMwzDMLsIK8jMzJTdbldGRob8/PwKfP+22NgC32dRMcaMMbuEG8I5L3qccwAAAOD6XW8ONXXEHgBQuPgyBQAAwPXdVIvnAQAAAACAf4ZgDwAAAACAhRHsAQAAAACwMII9AAAAAAAWRrAHAAAAAMDCCPYAAAAAAFgYwR4AAAAAAAsj2AMAAAAAYGEEewAAAAAALIxgDwAAAACAhRHsAQAAAACwMII9AAAAAAAWRrAHAAAAAMDCCPYAAAAAAFgYwR4AAAAAAAsj2AMAAAAAYGEEewAAAAAALIxgDwAAAACAhRHsAQAAAACwMII9AAAAAAAWRrAHAAAAAMDCCPYAAAAAAFgYwR4AAAAAAAsj2AMAAAAAYGEEewAAAAAALIxgDwAAAACAhRHsAQAAAACwMII9AAAAAAAWRrAHAAAAAMDCCPYAAAAAAFjYvwr2OTk5SklJ0YULFwqqHgAAAAAA8A/cULA/e/asevXqJW9vb9WqVUuHDx+WJA0aNEiTJk0q0AIBAAAAAMDV3VCwHzlypHbu3KmvvvpKnp6ejvaWLVtq+fLlBVYcAAAAAAC4tuI38qKVK1dq+fLlaty4sWw2m6M9NDRU+/fvL7DiAAAAAADAtd3QiP2JEyfk7++fr/3MmTNOQR8AAAAAABSuGwr2d999tz777DPH80thfvbs2YqIiCiYygAAAAAAwN+6oan4cXFxatu2rX744QdduHBBr732mvbu3atNmzYpMTGxoGsEAAAAAABXcUMj9k2aNNHGjRt19uxZVa1aVQkJCQoICNCmTZvUoEGDgq4RAAAAAABcxT8esT9//rz69u2rUaNGaf78+YVREwAAAAAAuE7/eMTe3d1dK1asKIxaAAAAAADAP3RDU/EffvhhrVy5soBLAQAAAAAA/9QNLZ5XrVo1jRs3Ths3blSDBg3k4+PjtH3QoEEFUhwAAAAAALi2Gwr27777rkqVKqXt27dr+/btTttsNhvBHgAAAACAInJDwf7AgQMFXQcAAC7BFhtrdgk3zBgzxuwSAADADbiha+z/yjAMGYZRELUAAAAAAIB/6IaD/YIFCxQWFiYvLy95eXmpTp06Wrhw4Q0XEhcXJ5vNpujoaEebYRiKiYlRUFCQvLy81Lx5c+3du9fpddnZ2Ro4cKDKlSsnHx8fRUZG6ujRo0590tPTFRUVJbvdLrvdrqioKJ08efKGawUAAAAA4GZxQ8F+6tSp6t+/vx588EG9//77Wr58udq2batnnnlG06ZN+8f727Ztm9555x3VqVPHqX3KlCmaOnWqZs6cqW3btikwMFCtWrXSqVOnHH2io6O1YsUKLVu2TBs2bNDp06fVoUMH5ebmOvp069ZNSUlJio+PV3x8vJKSkhQVFXUjhw4AAAAAwE3lhq6xnzFjht566y11797d0fbQQw+pVq1aiomJ0eDBg697X6dPn9YTTzyh2bNna/z48Y52wzA0ffp0vfTSS+rcubMkaf78+QoICNCSJUvUr18/ZWRkaM6cOVq4cKFatmwpSVq0aJGCg4O1bt06tWnTRsnJyYqPj9fmzZsVHh4uSZo9e7YiIiKUkpKi6tWr38gpAAAAAADgpnBDI/apqalq0qRJvvYmTZooNTX1H+3r2WefVfv27R3B/JIDBw4oLS1NrVu3drR5eHioWbNm2rhxoyRp+/btOn/+vFOfoKAg1a5d29Fn06ZNstvtjlAvSY0bN5bdbnf0uZLs7GxlZmY6PQAAAAAAuNncULCvVq2a3n///Xzty5cvV0hIyHXvZ9myZdqxY4fi4uLybUtLS5MkBQQEOLUHBAQ4tqWlpalEiRIqXbr0Nfv4+/vn27+/v7+jz5XExcU5rsm32+0KDg6+7uMCAAAAAKCo3NBU/NjYWD366KP6+uuv1bRpU9lsNm3YsEHr16+/YuC/kiNHjuj5559XQkKCPD09r9rPZrM5PTcMI1/b5S7vc6X+f7efkSNHasiQIY7nmZmZhHsAAG5C3GIQAHCru6ER+0ceeURbtmxRuXLltHLlSn388ccqV66ctm7dqocffvi69rF9+3YdP35cDRo0UPHixVW8eHElJibq9ddfV/HixR0j9ZePqh8/ftyxLTAwUDk5OUpPT79mn2PHjuV7/xMnTuSbDfBXHh4e8vPzc3oAAAAAAHCzuaERe0lq0KCBFi1adMNv3KJFC+3evdup7emnn1aNGjX04osvqkqVKgoMDNTatWt11113SZJycnKUmJioyZMnO2pwd3fX2rVr1bVrV0kXr//fs2ePpkyZIkmKiIhQRkaGtm7dqkaNGkmStmzZooyMjCuuEwAAAAAAgJXcULBfvXq13Nzc1KZNG6f2NWvWKC8vT+3atfvbffj6+qp27dpObT4+PipbtqyjPTo6WhMnTlRISIhCQkI0ceJEeXt7q1u3bpIku92uXr16aejQoSpbtqzKlCmjYcOGKSwszLEYX82aNdW2bVv16dNHs2bNkiT17dtXHTp0YEV8AAAAAIDl3dBU/BEjRjjdJ/4SwzA0YsSIf13UJcOHD1d0dLQGDBighg0b6tdff1VCQoJ8fX0dfaZNm6ZOnTqpa9euatq0qby9vbVq1Sq5ubk5+ixevFhhYWFq3bq1WrdurTp16mjhwoUFVicAAAAAAGa5oRH7n3/+WaGhofnaa9SooX379t1wMV999ZXTc5vNppiYGMXExFz1NZ6enpoxY4ZmzJhx1T5lypT5V5cNAAAAAABws7qhEXu73a5ffvklX/u+ffvk4+Pzr4sCAAAAAADX54aCfWRkpKKjo7V//35H2759+zR06FBFRkYWWHEAAAAAAODabijYv/zyy/Lx8VGNGjVUuXJlVa5cWTVq1FDZsmX1yiuvFHSNAAAAAADgKm7oGnu73a6NGzdq7dq12rlzp7y8vFS3bl3de++9BV0fAAAAAAC4hn80Yr9lyxZ9/vnnki4ubNe6dWv5+/vrlVde0SOPPKK+ffsqOzu7UAoFAAAAAAD5/aNgHxMTo127djme7969W3369FGrVq00YsQIrVq1SnFxcQVeJAAAAAAAuLJ/FOyTkpLUokULx/Nly5apUaNGmj17toYMGaLXX39d77//foEXCQAAAAAAruwfBfv09HQFBAQ4nicmJqpt27aO53fffbeOHDlScNUBAAAAAIBr+kfBPiAgQAcOHJAk5eTkaMeOHYqIiHBsP3XqlNzd3Qu2QgAAAAAAcFX/KNi3bdtWI0aM0DfffKORI0fK29vbaSX8Xbt2qWrVqgVeJAAAAAAAuLJ/dLu78ePHq3PnzmrWrJlKliyp+fPnq0SJEo7t7733nlq3bl3gRQIAAAAAgCv7R8G+fPny+uabb5SRkaGSJUvKzc3NafsHH3ygkiVLFmiBAAAAuLnYYmPNLuGGGWPGmF0CABS4fxTsL7Hb7VdsL1OmzL8qBgAAAAAA/DP/6Bp7AAAAAABwcyHYAwAAAABgYQR7AAAAAAAsjGAPAAAAAICFEewBAAAAALAwgj0AAAAAABZGsAcAAAAAwMII9gAAAAAAWBjBHgAAAAAACyPYAwAAAABgYQR7AAAAAAAsjGAPAAAAAICFEewBAAAAALAwgj0AAAAAABZGsAcAAAAAwMII9gAAAAAAWFhxswsAAAAAcG222FizS7hhxpgxZpcAuDxG7AEAAAAAsDCCPQAAAAAAFkawBwAAAADAwrjGHgAAAAAuw7oGsBJG7AEAAAAAsDCCPQAAAAAAFkawBwAAAADAwgj2AAAAAABYGMEeAAAAAAALI9gDAAAAAGBhBHsAAAAAACyMYA8AAAAAgIUR7AEAAAAAsDCCPQAAAAAAFlbc7AIAAAAAALDFxppdwg0zxowx9f0ZsQcAAAAAwMJMDfZvvfWW6tSpIz8/P/n5+SkiIkKff/65Y7thGIqJiVFQUJC8vLzUvHlz7d2712kf2dnZGjhwoMqVKycfHx9FRkbq6NGjTn3S09MVFRUlu90uu92uqKgonTx5sigOEQAAAACAQmVqsL/99ts1adIkfffdd/ruu+/0wAMP6KGHHnKE9ylTpmjq1KmaOXOmtm3bpsDAQLVq1UqnTp1y7CM6OlorVqzQsmXLtGHDBp0+fVodOnRQbm6uo0+3bt2UlJSk+Ph4xcfHKykpSVFRUUV+vAAAAAAAFDRTr7Hv2LGj0/MJEyborbfe0ubNmxUaGqrp06frpZdeUufOnSVJ8+fPV0BAgJYsWaJ+/fopIyNDc+bM0cKFC9WyZUtJ0qJFixQcHKx169apTZs2Sk5OVnx8vDZv3qzw8HBJ0uzZsxUREaGUlBRVr169aA8aAAAAAIACdNNcY5+bm6tly5bpzJkzioiI0IEDB5SWlqbWrVs7+nh4eKhZs2bauHGjJGn79u06f/68U5+goCDVrl3b0WfTpk2y2+2OUC9JjRs3lt1ud/S5kuzsbGVmZjo9AAAAAAC42Zge7Hfv3q2SJUvKw8NDzzzzjFasWKHQ0FClpaVJkgICApz6BwQEOLalpaWpRIkSKl269DX7+Pv753tff39/R58riYuLc1yTb7fbFRwc/K+OEwAAAACAwmB6sK9evbqSkpK0efNm9e/fXz169NAPP/zg2G6z2Zz6G4aRr+1yl/e5Uv+/28/IkSOVkZHheBw5cuR6DwkAAAAAgCJjerAvUaKEqlWrpoYNGyouLk5169bVa6+9psDAQEnKN6p+/Phxxyh+YGCgcnJylJ6efs0+x44dy/e+J06cyDcb4K88PDwcq/VfegAAAAAAcLMxPdhfzjAMZWdnq3LlygoMDNTatWsd23JycpSYmKgmTZpIkho0aCB3d3enPqmpqdqzZ4+jT0REhDIyMrR161ZHny1btigjI8PRBwAAAAAAqzJ1Vfz//ve/ateunYKDg3Xq1CktW7ZMX331leLj42Wz2RQdHa2JEycqJCREISEhmjhxory9vdWtWzdJkt1uV69evTR06FCVLVtWZcqU0bBhwxQWFuZYJb9mzZpq27at+vTpo1mzZkmS+vbtqw4dOrAiPgAAAADA8kwN9seOHVNUVJRSU1Nlt9tVp04dxcfHq1WrVpKk4cOHKysrSwMGDFB6errCw8OVkJAgX19fxz6mTZum4sWLq2vXrsrKylKLFi00b948ubm5OfosXrxYgwYNcqyeHxkZqZkzZxbtwQIAAAAAUAhMDfZz5sy55nabzaaYmBjFxMRctY+np6dmzJihGTNmXLVPmTJltGjRohstEwAAAACAm9ZNd409AAAAAAC4fgR7AAAAAAAsjGAPAAAAAICFEewBAAAAALAwgj0AAAAAABZGsAcAAAAAwMII9gAAAAAAWBjBHgAAAAAACyPYAwAAAABgYQR7AAAAAAAsjGAPAAAAAICFEewBAAAAALAwgj0AAAAAABZGsAcAAAAAwMII9gAAAAAAWBjBHgAAAAAACyPYAwAAAABgYQR7AAAAAAAsjGAPAAAAAICFEewBAAAAALAwgj0AAAAAABZGsAcAAAAAwMII9gAAAAAAWBjBHgAAAAAACyPYAwAAAABgYQR7AAAAAAAsjGAPAAAAAICFEewBAAAAALAwgj0AAAAAABZGsAcAAAAAwMII9gAAAAAAWBjBHgAAAAAACyPYAwAAAABgYQR7AAAAAAAsjGAPAAAAAICFEewBAAAAALAwgj0AAAAAABZGsAcAAAAAwMII9gAAAAAAWBjBHgAAAAAACyPYAwAAAABgYQR7AAAAAAAsjGAPAAAAAICFEewBAAAAALAwgj0AAAAAABZGsAcAAAAAwMJMDfZxcXG6++675evrK39/f3Xq1EkpKSlOfQzDUExMjIKCguTl5aXmzZtr7969Tn2ys7M1cOBAlStXTj4+PoqMjNTRo0ed+qSnpysqKkp2u112u11RUVE6efJkYR8iAAAAAACFytRgn5iYqGeffVabN2/W2rVrdeHCBbVu3Vpnzpxx9JkyZYqmTp2qmTNnatu2bQoMDFSrVq106tQpR5/o6GitWLFCy5Yt04YNG3T69Gl16NBBubm5jj7dunVTUlKS4uPjFR8fr6SkJEVFRRXp8QIAAAAAUNCKm/nm8fHxTs/nzp0rf39/bd++Xffdd58Mw9D06dP10ksvqXPnzpKk+fPnKyAgQEuWLFG/fv2UkZGhOXPmaOHChWrZsqUkadGiRQoODta6devUpk0bJScnKz4+Xps3b1Z4eLgkafbs2YqIiFBKSoqqV69etAcOAAAAAEABuamusc/IyJAklSlTRpJ04MABpaWlqXXr1o4+Hh4eatasmTZu3ChJ2r59u86fP+/UJygoSLVr13b02bRpk+x2uyPUS1Ljxo1lt9sdfS6XnZ2tzMxMpwcAAAAAADebmybYG4ahIUOG6J577lHt2rUlSWlpaZKkgIAAp74BAQGObWlpaSpRooRKly59zT7+/v753tPf39/R53JxcXGO6/HtdruCg4P/3QECAAAAAFAIbppg/9xzz2nXrl1aunRpvm02m83puWEY+doud3mfK/W/1n5GjhypjIwMx+PIkSPXcxgAAAAAABSpmyLYDxw4UJ988om+/PJL3X777Y72wMBASco3qn78+HHHKH5gYKBycnKUnp5+zT7Hjh3L974nTpzINxvgEg8PD/n5+Tk9AAAAAAC42Zga7A3D0HPPPaePP/5YX3zxhSpXruy0vXLlygoMDNTatWsdbTk5OUpMTFSTJk0kSQ0aNJC7u7tTn9TUVO3Zs8fRJyIiQhkZGdq6daujz5YtW5SRkeHoAwAAAACAFZm6Kv6zzz6rJUuW6H//+598fX0dI/N2u11eXl6y2WyKjo7WxIkTFRISopCQEE2cOFHe3t7q1q2bo2+vXr00dOhQlS1bVmXKlNGwYcMUFhbmWCW/Zs2aatu2rfr06aNZs2ZJkvr27asOHTqwIj4AAAAAwNJMDfZvvfWWJKl58+ZO7XPnztVTTz0lSRo+fLiysrI0YMAApaenKzw8XAkJCfL19XX0nzZtmooXL66uXbsqKytLLVq00Lx58+Tm5ubos3jxYg0aNMixen5kZKRmzpxZuAcIAAAAAEAhMzXYG4bxt31sNptiYmIUExNz1T6enp6aMWOGZsyYcdU+ZcqU0aJFi26kTAAAAAAAblo3xeJ5AAAAAADgxhDsAQAAAACwMII9AAAAAAAWRrAHAAAAAMDCCPYAAAAAAFgYwR4AAAAAAAsj2AMAAAAAYGEEewAAAAAALIxgDwAAAACAhRHsAQAAAACwMII9AAAAAAAWRrAHAAAAAMDCCPYAAAAAAFgYwR4AAAAAAAsj2AMAAAAAYGEEewAAAAAALIxgDwAAAACAhRHsAQAAAACwMII9AAAAAAAWRrAHAAAAAMDCCPYAAAAAAFgYwR4AAAAAAAsj2AMAAAAAYGEEewAAAAAALIxgDwAAAACAhRHsAQAAAACwMII9AAAAAAAWRrAHAAAAAMDCCPYAAAAAAFgYwR4AAAAAAAsj2AMAAAAAYGEEewAAAAAALIxgDwAAAACAhRHsAQAAAACwMII9AAAAAAAWRrAHAAAAAMDCCPYAAAAAAFgYwR4AAAAAAAsj2AMAAAAAYGEEewAAAAAALIxgDwAAAACAhRHsAQAAAACwMII9AAAAAAAWRrAHAAAAAMDCCPYAAAAAAFgYwR4AAAAAAAsj2AMAAAAAYGGmBvuvv/5aHTt2VFBQkGw2m1auXOm03TAMxcTEKCgoSF5eXmrevLn27t3r1Cc7O1sDBw5UuXLl5OPjo8jISB09etSpT3p6uqKiomS322W32xUVFaWTJ08W8tEBAAAAAFD4TA32Z86cUd26dTVz5swrbp8yZYqmTp2qmTNnatu2bQoMDFSrVq106tQpR5/o6GitWLFCy5Yt04YNG3T69Gl16NBBubm5jj7dunVTUlKS4uPjFR8fr6SkJEVFRRX68QEAAAAAUNiKm/nm7dq1U7t27a64zTAMTZ8+XS+99JI6d+4sSZo/f74CAgK0ZMkS9evXTxkZGZozZ44WLlyoli1bSpIWLVqk4OBgrVu3Tm3atFFycrLi4+O1efNmhYeHS5Jmz56tiIgIpaSkqHr16ld8/+zsbGVnZzueZ2ZmFuShAwAAAABQIG7aa+wPHDigtLQ0tW7d2tHm4eGhZs2aaePGjZKk7du36/z58059goKCVLt2bUefTZs2yW63O0K9JDVu3Fh2u93R50ri4uIcU/ftdruCg4ML+hABAAAAAPjXbtpgn5aWJkkKCAhwag8ICHBsS0tLU4kSJVS6dOlr9vH398+3f39/f0efKxk5cqQyMjIcjyNHjvyr4wEAAAAAoDCYOhX/ethsNqfnhmHka7vc5X2u1P/v9uPh4SEPD49/WC0AAAAAAEXrph2xDwwMlKR8o+rHjx93jOIHBgYqJydH6enp1+xz7NixfPs/ceJEvtkAAAAAAABYzU0b7CtXrqzAwECtXbvW0ZaTk6PExEQ1adJEktSgQQO5u7s79UlNTdWePXscfSIiIpSRkaGtW7c6+mzZskUZGRmOPgAAAAAAWJWpU/FPnz6tffv2OZ4fOHBASUlJKlOmjO644w5FR0dr4sSJCgkJUUhIiCZOnChvb29169ZNkmS329WrVy8NHTpUZcuWVZkyZTRs2DCFhYU5VsmvWbOm2rZtqz59+mjWrFmSpL59+6pDhw5XXREfAAAAAACrMDXYf/fdd7r//vsdz4cMGSJJ6tGjh+bNm6fhw4crKytLAwYMUHp6usLDw5WQkCBfX1/Ha6ZNm6bixYura9euysrKUosWLTRv3jy5ubk5+ixevFiDBg1yrJ4fGRmpmTNnFtFRAgAAAABQeEwN9s2bN5dhGFfdbrPZFBMTo5iYmKv28fT01IwZMzRjxoyr9ilTpowWLVr0b0oFAAAAAOCmdNNeYw8AAAAAAP4ewR4AAAAAAAsj2AMAAAAAYGEEewAAAAAALIxgDwAAAACAhRHsAQAAAACwMII9AAAAAAAWRrAHAAAAAMDCCPYAAAAAAFgYwR4AAAAAAAsj2AMAAAAAYGEEewAAAAAALIxgDwAAAACAhRHsAQAAAACwMII9AAAAAAAWRrAHAAAAAMDCCPYAAAAAAFgYwR4AAAAAAAsj2AMAAAAAYGEEewAAAAAALIxgDwAAAACAhRHsAQAAAACwMII9AAAAAAAWRrAHAAAAAMDCCPYAAAAAAFgYwR4AAAAAAAsj2AMAAAAAYGEEewAAAAAALIxgDwAAAACAhRHsAQAAAACwMII9AAAAAAAWRrAHAAAAAMDCCPYAAAAAAFgYwR4AAAAAAAsj2AMAAAAAYGEEewAAAAAALIxgDwAAAACAhRHsAQAAAACwMII9AAAAAAAWRrAHAAAAAMDCCPYAAAAAAFgYwR4AAAAAAAsj2AMAAAAAYGEEewAAAAAALIxgDwAAAACAhRHsAQAAAACwsFsq2L/55puqXLmyPD091aBBA33zzTdmlwQAAAAAwL9yywT75cuXKzo6Wi+99JK+//573XvvvWrXrp0OHz5sdmkAAAAAANyw4mYXUFSmTp2qXr16qXfv3pKk6dOna82aNXrrrbcUFxeXr392drays7MdzzMyMiRJmZmZhVPguXOFs98iUGjnpLBxzose57zocc6LHue86HHOix7nvOhxzose57zocc6vul/DMK7Zz2b8XQ8XkJOTI29vb33wwQd6+OGHHe3PP/+8kpKSlJiYmO81MTExio2NLcoyAQAAAADI58iRI7r99tuvuv2WGLH//ffflZubq4CAAKf2gIAApaWlXfE1I0eO1JAhQxzP8/Ly9Oeff6ps2bKy2WyFWm9ByszMVHBwsI4cOSI/Pz+zy7klcM6LHue86HHOix7nvOhxzose57zocc6LHue86Fn5nBuGoVOnTikoKOia/W6JYH/J5YHcMIyrhnQPDw95eHg4tZUqVaqwSit0fn5+lvuP2Oo450WPc170OOdFj3Ne9DjnRY9zXvQ450WPc170rHrO7Xb73/a5JRbPK1eunNzc3PKNzh8/fjzfKD4AAAAAAFZySwT7EiVKqEGDBlq7dq1T+9q1a9WkSROTqgIAAAAA4N+7ZabiDxkyRFFRUWrYsKEiIiL0zjvv6PDhw3rmmWfMLq1QeXh4aMyYMfkuK0Dh4ZwXPc550eOcFz3OedHjnBc9znnR45wXPc550bsVzvktsSr+JW+++aamTJmi1NRU1a5dW9OmTdN9991ndlkAAAAAANywWyrYAwAAAADgam6Ja+wBAAAAAHBVBHsAAAAAACyMYA8AAAAAgIUR7G8hWVlZZpcAACgALI8DAAD+imDvYp599tkrtp85c0bt2rUr4mpuPUeOHNHRo0fNLsPlnTx58qrb9u3bV3SFAIUoLi7uiu25ubnq1q1bEVdza1i/fv1Vt82cObMIK7l1cM4BoGCwKr6LCQkJ0aOPPqrx48c72s6cOaO2bdtKkr755huzSnNZFy5cUGxsrF5//XWdPn1aklSyZEkNHDhQY8aMkbu7u8kVup4mTZroiy++kKenp1N7SkqKWrRowZcrcAkBAQEaN26c+vbt62jLzc3VY489pj179ig5OdnE6lxTqVKltHbtWt19991O7dOnT9fo0aOVmZlpUmWui3NeNF5//fXr7jto0KBCrAQoOunp6ZozZ46Sk5Nls9lUo0YN9ezZU2XKlDG7tEJR3OwCULASEhJ0zz33qGzZsho8eLBOnTqlNm3aqHjx4vr888/NLs8lPffcc1qxYoWmTJmiiIgISdKmTZsUExOj33//XW+//bbJFbqe0qVLq1OnTvr0009VvPjFX2PJycl64IEH1LVrV5Orc21HjhxRcHDwFbdt3rxZjRs3LuKKXNfq1avVsmVLlSpVSl27dtX58+f16KOP6scff9SXX35pdnkuadq0aXrwwQeVmJio0NBQSdIrr7yicePG6bPPPjO5OtfEOS8a06ZNu65+NpuNYF+I+AwtOomJiXrooYfk5+enhg0bSpJmzJihcePG6ZNPPlGzZs1MrrAQGHA5u3fvNsqWLWtMnz7daNy4sdGsWTPj9OnTZpflsvz8/IzVq1fna1+9erXh5+dnQkWuLysry7jnnnuMLl26GHl5ecbu3bsNf39/Y/DgwWaX5vKqV69u/P777/naN2zYYNjt9qIvyMV9+eWXhp+fn7Fy5UqjY8eORmhoqJGWlmZ2WS7t5ZdfNm677TbjwIEDxqRJkww/Pz/j22+/Nbssl8Y5x62Cz9CiU6tWLaNPnz7GhQsXHG0XLlww+vbta9SqVcvEygoPI/YuqHbt2vr000/VsmVLhYeH69NPP5WXl5fZZbksT09PVapUKV97pUqVVKJEiaIv6Bbg6empTz/9VM2bN1eXLl30zTffqHv37nr55ZfNLs3l3XvvvWrdurW++uor+fr6SpK+/vprdezYUTExMeYW54KaN2+uhQsX6pFHHlHNmjWVmJiocuXKmV2WSxs2bJj++OMPNWzYULm5uUpISFB4eLjZZbk0zjluFXyGFp39+/fro48+kpubm6PNzc1NQ4YM0YIFC0ysrPBwjb0LuOuuu2Sz2fK1Hzp0SP7+/k6hfseOHUVZ2i1h7Nix+vHHHzV37lx5eHhIkrKzs9WrVy+FhIRozJgxJlfoGq50nWVaWppatmypDh06aNKkSY52Pz+/oiztlmIYhrp06aLjx48rISFBmzZtUmRkpMaPH6/nn3/e7PIsr3Pnzlds37x5s6pVq+YU6j/++OOiKsulXe3a41deeUX33XefGjVq5GhjinLB4Jyb7+jRo/rkk090+PBh5eTkOG2bOnWqSVW5Pj5Di07Tpk31wgsvqFOnTk7tK1eu1OTJk7Vp0yZzCitEBHsXEBsbe919CZkF7+GHH9b69evl4eGhunXrSpJ27typnJwctWjRwqkvf4jfuGLFil3xC6xLv8JsNpsMw5DNZlNubm5Rl3dLOX/+vNq3b68zZ85o165diouL03PPPWd2WS7h6aefvu6+c+fOLcRKbh2VK1e+rn42m02//PJLIVdza+Ccm2v9+vWKjIxU5cqVlZKSotq1a+vgwYMyDEP169fXF198YXaJLo3P0KKxfPlyDR8+XAMHDnSsXbB582a98cYbmjRpkmrWrOnoW6dOHbPKLFAEe+Bf4g/xopGYmHjdfV1yQRQT7dq1K1/bqVOn9Pjjj6t9+/bq37+/o91VPhwBwFU1atRIbdu21dixY+Xr66udO3fK399fTzzxhNq2bev0Ox3/Hp+h5ihW7Np3dXfFASGCvYvZtm2b8vLy8l2btmXLFrm5uTlWhQSA63VptsRfPy7++twVPxxvBgcOHNCFCxcUEhLi1P7zzz/L3d39imt7AMDf8fX1VVJSkqpWrarSpUtrw4YNqlWrlnbu3KmHHnpIBw8eNLtEl8JnqDkOHTp03X0rVqxYiJUUHRbPczHPPvushg8fni/Y//rrr5o8ebK2bNliUmWu78SJE0pJSZHNZtOdd96p8uXLm12Sy5o7d65KliypLl26OLV/8MEHOnv2rHr06GFSZa7pwIEDZpdwS3rqqafUs2fPfMF+y5Ytevfdd/XVV1+ZU5gL+89//qOGDRtqxIgRTu0vv/yytm7dqg8++MCkylwX57zo+fj4KDs7W5IUFBSk/fv3q1atWpKk33//3czSXBKfoeZwlbD+TzBi72JKliypXbt2qUqVKk7tBw4cUJ06dXTq1CmTKnNdZ86c0cCBA7VgwQLl5eVJurjqZvfu3TVjxgx5e3ubXKHrqV69ut5++23df//9Tu2JiYnq27evUlJSTKoMKDh+fn7asWOHqlWr5tS+b98+NWzYUCdPnjSnMBdWvnx5ffHFFwoLC3Nq3717t1q2bKljx46ZVJnr4pwXvU6dOql9+/bq06ePhg8frhUrVuipp57Sxx9/rNKlS2vdunVmlwgUiP3792v69OlKTk6WzWZTzZo19fzzz6tq1apml1Yorn3xASzHw8Pjih+CqampKl6cCRqFYciQIUpMTNSqVat08uRJnTx5Uv/73/+UmJiooUOHml2eSzp06NAVF1+qWLGiDh8+bEJFt464uDi99957+drfe+89TZ482YSKXJfNZrvil7EZGRlM1ywkp0+fvuJtSt3d3a94Zw78e5zzojd16lTHzM6YmBi1atVKy5cvV8WKFTVnzhyTq3NtfIYWnTVr1ig0NFRbt25VnTp1VLt2bW3ZskW1atXS2rVrzS6vUBDsXUyrVq00cuRIZWRkONpOnjyp//73v2rVqpWJlbmujz76SHPmzFG7du3k5+cnPz8/Pfjgg5o9e7Y+/PBDs8tzSf7+/ldcjGbnzp0qW7asCRXdOmbNmqUaNWrka69Vq5befvttEypyXffee6/i4uKcQnxubq7i4uJ0zz33mFiZ66pdu7aWL1+er33ZsmUKDQ01oSLXxzkvelWqVHEs0ubt7a0333xTu3bt0scff3xLTl8uSnyGFp0RI0Zo8ODB2rJli6ZOnapp06Zpy5Ytio6O1osvvmh2eYWCIVwX8+qrr+q+++5TxYoVddddd0mSkpKSFBAQoIULF5pcnWs6e/asAgIC8rX7+/vr7NmzJlTk+h577DENGjRIvr6+uu+++yRdnIb//PPP67HHHjO5OteWlpamChUq5GsvX768UlNTTajIdU2ZMkX33XefqlevrnvvvVeS9M033ygzM5PbURWSUaNG6ZFHHtH+/fv1wAMPSLp4a7ClS5dyrXch4ZwXvSpVqmjbtm35vgg/efKk6tevzy0GCxGfoUUnOTlZ77//fr72nj17avr06UVfUBFgxN7F3Hbbbdq1a5emTJmi0NBQNWjQQK+99pp2796t4OBgs8tzSRERERozZozOnTvnaMvKylJsbKwiIiJMrMx1jR8/XuHh4WrRooW8vLzk5eWl1q1b64EHHtDEiRPNLs+lBQcH69tvv83X/u233yooKMiEilxXaGiodu3apa5du+r48eM6deqUunfvrh9//FG1a9c2uzyXFBkZqZUrV2rfvn0aMGCAhg4dqqNHj2rdunXq1KmT2eW5JM550Tt48OAVL+fJzs7Wr7/+akJFtw4+Q4tO+fLllZSUlK89KSlJ/v7+RV9QEWDE3gX5+Piob9++Zpdxy3jttdfUtm1b3X777apbt65sNpuSkpLk6empNWvWmF2eSypRooSWL1+ucePGaefOnfLy8lJYWBhTCItA7969FR0drfPnzzuNrg0fPpw1JQpBUFAQX1YVsfbt26t9+/Zml3FL4ZwXjU8++cTx85o1a2S32x3Pc3NztX79em6jWcj4DC06ffr0Ud++ffXLL7+oSZMmstls2rBhgyZPnuyy55pV8V3QrbYC5M0gKytLixYt0o8//ijDMBQaGqonnnhCXl5eZpfm8v56H1gUPsMwNGLECL3++uvKycmRJHl6eurFF1/U6NGjTa7O9Zw8eVJz5sxx/D4PDQ1Vz549nf4gR8Hbvn270zm/dGkbCg/nvPAVK3Zxou7l91SXLi5WWKlSJb366qvq0KGDGeXdEvgMLTqGYWj69Ol69dVX9dtvv0m6+GX5Cy+8oEGDBrnk340EexezZs0aRUZGql69emratKkMw9DGjRu1c+dOrVq1igX04DIWLFigl19+WT///LMk6c4779QLL7ygqKgokyu7NZw+fVrJycny8vJSSEiIPDw8zC7J5Xz33Xdq06aNvLy81KhRIxmGoe+++05ZWVlKSEhQ/fr1zS7R5Rw/flyPPfaYvvrqK5UqVUqGYSgjI0P333+/li1bpvLly5tdosvhnBe9ypUra9u2bSpXrpzZpdyy+AwtWpfuMOPr62tyJYWLYO9i7rrrLrVp00aTJk1yah8xYoQSEhK0Y8cOkypzbT/99JO++uorHT9+3HEv+0v4BrbgTZ06VaNGjdJzzz3n+ALr22+/1RtvvKHx48dr8ODBZpd4Szh69KhsNptuu+02s0txSffee6+qVaum2bNnO25XeuHCBfXu3Vu//PKLvv76a5MrdD2PPvqo9u/fr4ULF6pmzZqSpB9++EE9evRQtWrVtHTpUpMrdD2cc3OdO3dOnp6eZpdxS+IzFAXOgEvx8PAwfvrpp3ztKSkphoeHhwkVub533nnHcHNzMwICAoy6desa9erVczzuuusus8tzSZUqVTLmz5+fr33evHlGpUqVTKjo1pGbm2vExsYafn5+RrFixYxixYoZdrvdGDt2rJGbm2t2eS7F09PTSE5Ozte+d+9ew8vLy4SKXJ+fn5+xdevWfO1btmwx7HZ70Rd0C+CcF73c3Fxj7NixRlBQkOHm5mbs37/fMAzD+L//+z/j3XffNbk618ZnaNFJS0sznnzySaNChQqGm5ub43xfergiFs9zMZdWgAwJCXFqd+UVIM02fvx4TZgwwWXviXkzSk1NVZMmTfK1N2nShNvFFLKXXnpJc+bM0aRJk5xmS8TExOjcuXOaMGGC2SW6DD8/Px0+fDjfPY+PHDni8tMJzZKXlyd3d/d87e7u7vlmY6FgcM6L3vjx4zV//nxNmTJFffr0cbSHhYVp2rRp6tWrl4nVuTY+Q4vOU089pcOHD2vUqFGqUKGCS15Tn4/Z3yygYMXGxhqlSpUyJk2aZHz99dfGN998Y8TFxRmlSpUyxo0bZ3Z5LsnX19fxbTeKRq1atYwJEybkax83bpxRu3ZtEyq6dVSoUMH43//+l6995cqVRlBQkAkVua6BAwcat99+u7Fs2TLj8OHDxpEjR4ylS5cat99+u/H888+bXZ5LioyMNO677z7j119/dbQdPXrUaNasmdGpUycTK3NdnPOiV7VqVWPdunWGYRhGyZIlHX/DJCcnG6VKlTKzNJfHZ2jRKVmypPH999+bXUaRYsTexYwaNUq+vr569dVXNXLkSEkXV4CMiYnRoEGDTK7ONXXp0kUJCQl65plnzC7llhEbG6tHH31UX3/9tZo2beq4hcn69ev1/vvvm12eS/vzzz/zjSBLUo0aNfTnn3+aUJHreuWVV2Sz2dS9e3dduHBB0sVRzP79++dbRwUFY+bMmXrooYdUqVIlBQcHy2az6fDhwwoLC9OiRYvMLs8lcc6L3q+//qpq1arla8/Ly9P58+dNqOjWwWdo0QkODs539wdXx+J5LuTChQtavHix2rRpo8DAwFtmBUgzvP76646fz5w5o6lTp6p9+/YKCwvLN6WQL1QKx44dOzR16lQlJyc7bjE4dOhQbpFUyMLDwxUeHu70/4AkDRw4UNu2bdPmzZtNqsy15ObmasOGDQoLC5Onp6f2798vwzBUrVo1eXt7m12ey1u7dq3T7Utbtmxpdkkuj3NedBo2bKjo6Gg9+eST8vX11c6dO1WlShXFxsZq3bp1+uabb8wu0WXxGVp0EhIS9Oqrr2rWrFmqVKmS2eUUCYK9i/H29lZycrIqVqxodikurXLlytfVz2az6Zdffinkam4t58+fV9++fTVq1ChVqVLF7HJuOYmJiWrfvr3uuOMORUREyGazaePGjTpy5IhWr16te++91+wSXYanp6eSk5Ov+/cN/p0LFy7I09NTSUlJql27ttnl3BI45+ZYtWqVoqKiNHLkSI0dO1axsbFKSUnRggUL9Omnn3Jr5EL09ddf68EHH+QztJCULl3a6Vr6M2fO6MKFC/L29s438OaKMySYiu9iwsPD9f333xPsC9mBAwfMLuGW5e7urhUrVmjUqFFml3JLatasmX766Se98cYbjtG1zp07a8CAAQoKCjK7PJcSFhamX375hWBfRIoXL66KFSsqNzfX7FJuGZxzc3Ts2FHLly/XxIkTZbPZNHr0aNWvX1+rVq0i1Bei8+fPa8yYMUpISNBnn33GZ2ghmD59utklmIoRexfzwQcfaMSIERo8eLAaNGggHx8fp+116tQxqTKg4Dz99NMKCwvTkCFDzC7llnL+/Hm1bt1as2bN0p133ml2OS4vISFBL774osaNG3fF3+d+fn4mVea65s6dqw8++ECLFi1SmTJlzC7nlsA5x62kfPny2rhxY767VwEFgWDvYooVK5avzWazyTAM2Ww2vhWHS5gwYYJeeeUVtWjR4oqBh3UNCg9/lBSdv/4+/+vUQn6fF5677rpL+/bt0/nz51WxYsV8v1t27NhhUmWui3NurtOnT+e7rSBfGhaeoUOHyt3dnQVQUSiYiu9imCKOW8G7776rUqVKafv27dq+fbvTNpvNRrAvRN27d3fcgxeF68svvzS7hFtOp06dzC7hlsM5L3oHDhzQc889p6+++krnzp1ztPOlYeHLycnRu+++q7Vr16phw4b5vsiaOnWqSZXBFTBiDwC4bgMHDtSCBQtUrVo1/igBAAtq0qSJJOn5559XQECA04wg6eJaKigc999//1W32Ww2ffHFF0VYDVwNwR4AcN34owQArK1kyZLavn27qlevbnYpAAoQU/GBApCenq45c+YoOTlZNptNNWrUUM+ePVkICC6H6eEAYG133323jhw5QrDHLePIkSOy2Wy6/fbbzS6lUDFiD/xLiYmJeuihh+Tn56eGDRtKkrZv366TJ0/qk08+YUobXNbSpUsVGRmZbzo+AODmtX//fj3zzDN68sknVbt27Xz39+YOSnAFFy5cUGxsrF5//XWdPn1a0sXZKgMHDtSYMWPy/XfvCgj2wL9Uu3ZtNWnSRG+99Zbc3NwkSbm5uRowYIC+/fZb7dmzx+QKgcLh5+enpKQkValSxexSAADXafPmzerWrZsOHjzoaOMOSnA1zzzzjFasWKGxY8cqIiJCkrRp0ybFxMTooYce0ttvv21yhQWPYO+ivvvuO6dp4ZdGklHwvLy8lJSUlG9KW0pKiurVq6esrCyTKnNdOTk5KlGixBW3/f777ypXrlwRV3Rr8vX11c6dOwn2hSQmJkZPP/20KlasaHYpt5ycnBwdOHBAVatWVfHiXLVYmMaOHathw4bJ29vbqT0rK0svv/yyRo8ebVJlris0NFQ1a9bU8OHDr7h4Hr9z4ArsdruWLVumdu3aObV//vnneuyxx5SRkWFSZYUn/03PYWlHjx7Vvffeq0aNGun555/XoEGD1KhRI91zzz06cuSI2eW5pPr16ys5OTlfe3JysurVq1f0Bd0Cunbtmu++u5J07NgxNW/evOgLAgrBqlWrVLVqVbVo0UJLlixxui0VCsfZs2fVq1cveXt7q1atWjp8+LAkadCgQdzisZDExsY6psn+1dmzZxUbG2tCRa7v0KFDmjx5ssLDw1WpUiVVrFjR6QG4Ak9PT1WqVClfe6VKla46OGR1BHsX07NnT50/f17Jycn6888/9eeffyo5OVmGYahXr15ml+eSBg0apOeff16vvPKKNmzYoA0bNuiVV17R4MGDFR0drV27djkeKBipqan5/ntOS0tT8+bNVaNGDZOquvV8/vnnuu2228wuw2Vt375dO3bsUJ06dTR48GBVqFBB/fv317Zt28wuzWWNHDlSO3fu1FdffSVPT09He8uWLbV8+XITK3Ndl6Z/X27nzp0sQFtIHnjgAe3cudPsMoBC9eyzz2rcuHHKzs52tGVnZ2vChAl67rnnTKys8DAV38V4eXlp48aNuuuuu5zad+zYoaZNmzItvBAUK3bt78e4bq3g/fHHH7rvvvvUunVrTZs2Tb/++qseeOAB1a1bV8uWLfvbfxPcuKysLBmG4Zg2e+jQIa1YsUKhoaFq3bq1ydW5rgsXLmjVqlWaO3eu4uPjVb16dfXu3VtPPfWU7Ha72eW5jIoVK2r58uVq3Lix06Um+/btU/369ZWZmWl2iS6jdOnSstlsysjIkJ+fn1O4z83N1enTp/XMM8/ojTfeMLFK1/TOO+9o/Pjx6tmzp8LCwvItIhYZGWlSZUDBefjhh7V+/Xp5eHiobt26ki5+YZiTk6MWLVo49f3444/NKLHAceGYi7njjjt0/vz5fO0XLlxgZK2QHDhwwOwSbjlly5bVmjVrdM8990iSPvvsM9WvX1+LFy8m1Beyhx56SJ07d9YzzzyjkydPKjw8XO7u7vr99981depU9e/f3+wSXVJeXp5ycnKUnZ0twzBUpkwZvfXWWxo1apRmz56tRx991OwSXcKJEyfk7++fr/3MmTNXHFXGjZs+fboMw1DPnj0VGxvr9AVViRIlVKlSJceCVyhYzzzzjKSL6xtcjkEIuIpSpUrpkUcecWoLDg42qZqiwYi9i/nf//6niRMn6o033lCDBg1ks9n03XffaeDAgXrxxRfVqVMns0sECszPP/+se+65R61atdLChQv5w7sIlCtXTomJiapVq5beffddzZgxQ99//70++ugjjR49+orrTeDGbd++XXPnztXSpUvl4eGh7t27q3fv3qpWrZok6dVXX9WUKVN07Ngxkyt1Dc2aNdN//vMfDRw4UL6+vtq1a5cqV66s5557Tvv27VN8fLzZJbqE+vXra/369SpdurTuv/9+rVq1SiVLljS7LACwNIK9iyldurTOnj2rCxcuOFbyvfTz5fea/vPPP80o0SV88sknateundzd3fXJJ59csy9T2grGpWmblzt79qw8PDwctxqU+G+7MHl7e+vHH3/UHXfcoa5du6pWrVoaM2aMjhw5ourVq+vs2bNml+gy6tSpo+TkZLVu3Vp9+vRRx44dnf47ly6OMAcEBFxxMUn8cxs3blTbtm31xBNPaN68eerXr5/27t2rTZs2KTExUQ0aNDC7RJfg5eWln3/+Wbfffrvc3NyUlpam8uXLm10WAFgaU/FdzPTp080u4ZbQqVMnpaWlyd/f/5qzIJjSVnD4b/vmUK1aNa1cuVIPP/yw1qxZo8GDB0uSjh8/Lj8/P5Orcy1dunRRz549r3kZVfny5Qn1BahJkyb69ttv9corr6hq1apKSEhQ/fr1tWnTJoWFhZldnsuoV6+enn76ad1zzz0yDEMvv/zyVUfsud0dgOv119lAd9111zVncu7YsaMIKysajNgDAK7bhx9+qG7duik3N1cPPPCA1q5dK0mKi4vT119/rc8//9zkCl3D+fPnVb16dX366acKDQ01uxygQKWkpGjMmDHav3+/duzYodDQUMcsw7+y2Wwu+cc3gMIRGxurF154Qd7e3n97u8wxY8YUUVVFh2DvgnJzc7Vy5UolJyfLZrMpNDRUkZGR+aZwAlbyT1ajZuS4cKWlpSk1NVV169Z1LFa4detW+fn5cbvBAnTbbbdp3bp1qlmzptmluLTMzEzH74y/+z3D75aCV6xYMccMOAAoCLm5udqwYYPq1Kmj0qVLm11OkSHYu5h9+/bpwQcf1K+//qrq1avLMAz99NNPCg4O1meffaaqVauaXaJLWr9+vdavX6/jx4/nmxb73nvvmVSVaylWrNjfLo7HbQWLzr59+7R//37dd9998vLyuuq9qHHjJk2apB9//FHvvvvuFUczUTDc3NyUmpoqf3//q/6e4XcLAFiLp6enkpOTVblyZbNLKTL8peBiBg0apKpVq2rz5s0qU6aMpIv3/H7yySc1aNAgffbZZyZX6HpiY2M1duxYNWzYUBUqVCDcFJIvv/zS7BKgi79Punbtqi+//FI2m00///yzqlSpot69e6tUqVJ69dVXzS7RZWzZskXr169XQkKCwsLC8i2A6ir33TXbF1984fi85PeMOfbv36/p06c7ZhrWrFlTzz//PIMRhaR58+bq2bOnunTpIi8vL7PLAQpFWFiYfvnll1sq2DNi72J8fHy0efPmfIv87Ny5U02bNtXp06dNqsx1VahQQVOmTFFUVJTZpQCFrnv37jp+/Ljeffdd1axZUzt37lSVKlWUkJCgwYMHa+/evWaX6DKefvrpa26fO3duEVUCFJ41a9YoMjJS9erVU9OmTWUYhjZu3KidO3dq1apVatWqldklupyhQ4dq8eLFysrKUteuXdWrVy81btzY7LKAApWQkKAXX3xR48aNU4MGDfJ9Oe6Kl1YR7F1MmTJl9Omnn6pJkyZO7d9++606duzIbcAKQdmyZbV161ZGForYyZMnNWfOHKe1JHr27Cm73W52aS4tMDBQa9asUd26deXr6+sI9gcOHFBYWBhfHsJydu3add1969SpU4iV3JruuusutWnTRpMmTXJqHzFihBISElg8r5Dk5ubq008/1dy5c7V69WpVq1ZNPXv2VFRUlAICAswuD/jXLq0BJMlpNq0rX1pFsHcx3bt3144dOzRnzhw1atRI0sXpnH369FGDBg00b948cwt0QS+++KJKliypUaNGmV3KLeO7775TmzZt5OXlpUaNGskwDH333XfKyspy3J4KhcPX11c7duxQSEiIU7Dftm2b2rZtqz/++MPsEl3GAw88oI8//lilSpVyas/MzFSnTp30xRdfmFOYi7l0Xf31rBPhin8Ims3T01O7d+9WSEiIU/tPP/2kOnXq6Ny5cyZVdus4ceKEZs2apQkTJig3N1cPPvigBg0apAceeMDs0oAblpiYeM3tzZo1K6JKig7X2LuY119/XT169FBERITc3d0lSRcuXFBkZKRee+01k6tzHUOGDHH8nJeXp3feeUfr1q1TnTp1HOf9kqlTpxZ1eS5v8ODBioyM1OzZsx2Lil24cEG9e/dWdHS0vv76a5MrdF333XefFixYoHHjxkm6+C14Xl6eXn75Zd1///0mV+davvrqK+Xk5ORrP3funL755hsTKnJNBw4ccPz8/fffa9iwYXrhhRcUEREhSdq0aZNeffVVTZkyxawSXVr58uWVlJSUL9gnJSWxUn4R2Lp1q+bOnaulS5fK399fTz31lFJTU9WxY0f1799fr7zyitklAjekcuXKCg4OzveFrWEYOnLkiElVFS5G7F3Uzz//rOTkZElSaGioqlWrZnJFruV6A4zNZmNUrRB4eXnp+++/z3drtR9++EENGzbU2bNnTarM9f3www9q3ry5GjRooC+++EKRkZHau3ev/vzzT3377bdcklIALk0Nr1evntPCbtLFEeP4+HjNmjVLBw8eNKlC19WoUSPFxMTowQcfdGpfvXq1Ro0ape3bt5tUmesaO3aspk2bphEjRqhJkyay2WzasGGDJk+erKFDh+r//u//zC7R5Rw/flwLFy7U3Llz9fPPP6tjx47q3bu32rRp4whB69atU6dOnbi8Cpb11zue/NUff/whf39/l5yBxYi9iwoJCXGEeVZpL3isnGwuPz8/HT58OF+wP3LkiHx9fU2q6tYQGhqqXbt26a233pKbm5vOnDmjzp0769lnn1WFChXMLs8l1KtXTzabTTab7YpTYb28vDRjxgwTKnN9u3fvvuIKypUrV9YPP/xgQkWub9SoUfL19dWrr76qkSNHSpKCgoIUExOjQYMGmVyda7r99ttVtWpV9ezZU0899ZTKly+fr0+jRo109913m1AdUDCudnnV6dOn5enpaUJFhY8Rexc0Z84cTZs2TT///LOkiyE/OjpavXv3NrkyoGAMGjRIK1as0CuvvOI0wvPCCy/okUce0fTp080uEbhhhw4dkmEYqlKlirZu3er0R3eJEiXk7+8vNzc3Eyt0XfXr11fNmjU1Z84cxx9+2dnZ6tmzp5KTk1nIrZCdOnVKkviCtpB98803uvfee80uAygUly6Xfe2119SnTx95e3s7tuXm5mrLli1yc3PTt99+a1aJhYYRexczatQoTZs2TQMHDnS6PnDw4ME6ePCgxo8fb3KFwL/3yiuvyGazqXv37rpw4YIkyd3dXf3798+3sjIK1t+tX3DfffcVUSWuq2LFipIurt+BovX222+rY8eOCg4OVt26dSVdvF2szWbTp59+anJ1rikrK0uGYcjb21u+vr46dOiQ5syZo9DQULVu3drs8lzSF198oaCgIC6dgkv6/vvvJV0csd+9e7dKlCjh2FaiRAnVrVtXw4YNM6u8QsWIvYspV66cZsyYoccff9ypfenSpRo4cKB+//13kyoD/p1du3apdu3aTrcvOXv2rPbv3y/DMFStWjWnb2VROP56/i/561Q3V7xmzUw//fSTvvrqKx0/fjxf0B89erRJVbm2s2fPatGiRfrxxx9lGIZCQ0PVrVu3fPdARsFo3bq1OnfurGeeeUYnT55U9erVVaJECf3++++aOnWq+vfvb3aJLqdOnTrau3ev7r77bj355JN69NFHrzgdH7Cyp59+Wq+99ppL3q/+agj2LqZ06dLaunXrFW8b06hRI508edKcwoB/6a+LoFy6vVrZsmXNLuuWk5GR4fT8/Pnz+v777zVq1ChNmDBBLVq0MKky1zN79mz1799f5cqVU2BgoNMXKDabjWnhcAnlypVTYmKiatWqpXfffVczZszQ999/r48++kijR492LASMgrV3714tXrxYy5Yt09GjR9WyZUs9+eST6tSpE1+SAxZFsHcxAwcOlLu7e75brA0bNkxZWVl64403TKoM+HfKli2r1atXKzw8XMWKFdOxY8cYYbiJfP311xo8eDCrhhegihUrasCAAXrxxRfNLuWWwiyJouXt7a0ff/xRd9xxh7p27apatWppzJgxOnLkiKpXr85dTorAt99+qyVLluiDDz7QuXPnlJmZaXZJAG4A19i7oDlz5ighIUGNGzeWJG3evFlHjhxR9+7dne6/zv3VYSWPPPKImjVrpgoVKshms6lhw4ZXXUDsl19+KeLqUL58eaWkpJhdhktJT09Xly5dzC7jlvJ3syQI9gWvWrVqWrlypR5++GGtWbNGgwcPlnTxlmy30hRaM/n4+MjLy0slSpRwLGAIwHoYsXcx3F8driw+Pl779u3ToEGDNHbs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"
+class="
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[67]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Distribution of song durations using a histogram (in minutes)</span>
@@ -16156,7 +18823,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[68]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Boxplot to visualize the spread of artist familiarity</span>
@@ -16205,7 +18872,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[69]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Line plot to show the trend of song releases over the years</span>
@@ -16255,7 +18922,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[70]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Scatter plot of artist familiarity vs. score</span>
@@ -16305,7 +18972,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[71]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Scatter plot with regression line</span>
@@ -16355,7 +19022,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[72]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Scatter plot of song duration vs. score</span>
@@ -16405,7 +19072,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[73]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Scatter plot of artist familiarity vs. song duration with size variation</span>
